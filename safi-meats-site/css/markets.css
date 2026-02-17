@@ -1,0 +1,94 @@
+/* ==========================================================================
+   SAFI MEATS — Markets Page Styles
+   Map placeholder, region grid, stats row
+   ========================================================================== */
+
+/* ── Map Placeholder ──────────────────────────────────────────────────────── */
+.markets-map {
+  padding: var(--space-xl) 0 var(--space-lg);
+}
+
+.markets-map__placeholder {
+  background-color: var(--cream);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+}
+
+.markets-map__placeholder h3 {
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+
+.markets-map__placeholder p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ── Region Grid ──────────────────────────────────────────────────────────── */
+.markets-regions {
+  padding: 0 0 var(--space-xl);
+}
+
+.region-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.region-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.region-card .label {
+  margin-bottom: 0.6rem;
+}
+
+.region-card h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.region-card__countries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.region-card__tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-light);
+  padding: 0.35rem 0.8rem;
+  background-color: var(--section-alt);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.region-card__tag:hover {
+  background-color: rgba(184, 146, 74, 0.1);
+}
+
+.region-card__note {
+  margin-top: var(--space-sm);
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* ── Market Stats Row ─────────────────────────────────────────────────────── */
+.markets-stats {
+  background-color: var(--primary);
+  padding: var(--space-xl) 0;
+}
+
+.markets-stats .stats-grid {
+  max-width: 900px;
+  margin: 0 auto;
+}
