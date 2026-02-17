@@ -344,47 +344,32 @@
   }
 }
 
-/* ── Page Header (inner pages) — compact left-aligned banner ──────────────── */
+/* ── Page Header (inner pages) — slim title-only bar ─────────────────────── */
 .page-header {
-  background-color: var(--primary);
-  padding: 6.5rem 0 2rem;
+  background: var(--primary);
+  padding: 5.5rem 0 1.2rem;
   position: relative;
-  overflow: hidden;
-}
-
-.page-header::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: -5%;
-  transform: translateY(-50%);
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(184, 146, 74, 0.03) 0%, transparent 70%);
-  pointer-events: none;
 }
 
 .page-header .label {
   color: var(--accent);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.3rem;
 }
 
 .page-header h1 {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
   color: var(--cream);
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
+  font-weight: 500;
 }
 
 .page-header__subtitle {
-  color: rgba(240, 237, 228, 0.65);
-  font-size: 0.88rem;
-  max-width: 480px;
-  line-height: 1.6;
+  display: none;
 }
 
 @media (max-width: 600px) {
   .page-header {
-    padding: 5.5rem 0 1.5rem;
+    padding: 5rem 0 1rem;
   }
 }
 
