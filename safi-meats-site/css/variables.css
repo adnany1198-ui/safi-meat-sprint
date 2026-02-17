@@ -1,0 +1,56 @@
+/* ==========================================================================
+   SAFI MEATS — Design Tokens / CSS Custom Properties
+   All colours, fonts, spacing, and shared values live here.
+   ========================================================================== */
+
+:root {
+  /* ── Colours ────────────────────────────────────────────────────────────── */
+  --primary:        #1E3A2F;   /* Deep forest green — nav, footer, hero, dark sections */
+  --primary-light:  #2D5243;   /* Hover states, secondary backgrounds */
+  --primary-dark:   #142A21;   /* Deep overlays */
+  --accent:         #B8924A;   /* Gold — buttons, labels, highlights, CTAs only */
+  --accent-light:   #C9A55E;   /* Gold hover states */
+  --accent-dark:    #9A7838;   /* Gold pressed states */
+  --cream:          #F0EDE4;   /* Text on dark backgrounds, warm off-white sections */
+  --cream-dark:     #E4DFD3;   /* Borders, placeholders */
+  --white:          #FAFAF7;   /* Page background */
+  --text:           #1E3A2F;   /* Primary text */
+  --text-light:     #4A6458;   /* Body copy, secondary text */
+  --text-muted:     #7D8E85;   /* Captions, placeholders */
+  --border:         #D4CFC4;   /* Subtle borders */
+  --overlay:        rgba(30, 58, 47, 0.85);
+  --section-alt:    #F6F4EF;   /* Alternating section background */
+
+  /* ── Typography ─────────────────────────────────────────────────────────── */
+  --font-display:   'Cormorant Garamond', Georgia, serif;
+  --font-body:      'DM Sans', -apple-system, sans-serif;
+  --font-arabic:    'Noto Naskh Arabic', serif;
+  --font-mono:      'JetBrains Mono', monospace;
+
+  /* ── Spacing ────────────────────────────────────────────────────────────── */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  4rem;
+  --space-xl:  7rem;
+  --space-2xl: 10rem;
+
+  /* ── Layout ─────────────────────────────────────────────────────────────── */
+  --container-max:    1200px;
+  --container-narrow: 800px;
+  --container-pad:    2rem;
+
+  /* ── Transitions ────────────────────────────────────────────────────────── */
+  --transition-fast:   0.2s ease;
+  --transition-base:   0.35s ease;
+  --transition-slow:   0.6s ease;
+
+  /* ── Shadows ────────────────────────────────────────────────────────────── */
+  --shadow-card:       0 4px 16px rgba(0, 0, 0, 0.05);
+  --shadow-card-hover: 0 12px 32px rgba(0, 0, 0, 0.08);
+
+  /* ── Border Radius ──────────────────────────────────────────────────────── */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+}
