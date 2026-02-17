@@ -1,0 +1,106 @@
+/* ==========================================================================
+   SAFI MEATS — Process Page Styles
+   Interactive map placeholder, 7-step process flow
+   ========================================================================== */
+
+/* ── Map Placeholder ──────────────────────────────────────────────────────── */
+.process-map {
+  padding: var(--space-xl) 0 var(--space-lg);
+}
+
+.process-map__placeholder {
+  background-color: var(--cream);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+}
+
+.process-map__placeholder h3 {
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+
+.process-map__placeholder p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ── Process Flow ─────────────────────────────────────────────────────────── */
+.process-flow {
+  padding: 0 0 var(--space-xl);
+}
+
+.process-step {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: var(--space-md);
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+
+.process-step:first-child {
+  padding-top: 0;
+}
+
+.process-step:last-child {
+  border-bottom: none;
+}
+
+.process-step__number {
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 1;
+  opacity: 0.6;
+}
+
+.process-step__content {
+  max-width: 640px;
+}
+
+.process-step__label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.process-step__content h3 {
+  margin-bottom: 0.8rem;
+}
+
+.process-step__content p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: var(--space-sm);
+}
+
+.process-step__overseer {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  padding: 0.4rem 0.8rem;
+  background-color: rgba(184, 146, 74, 0.08);
+  border-radius: var(--radius-sm);
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .process-step {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .process-step__number {
+    font-size: 2.4rem;
+  }
+}
