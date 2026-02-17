@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 300);
   };
 
-  // Auto-dismiss after 4 seconds
-  const autoTimer = setTimeout(dismissSplash, 4000);
+  // Auto-dismiss after 3 seconds
+  const autoTimer = setTimeout(dismissSplash, 3000);
 
   // Click/tap to skip
   splash.addEventListener('click', () => {
