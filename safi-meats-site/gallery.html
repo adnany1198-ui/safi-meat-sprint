@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Safi Meats</title>
+  <meta name="description" content="A visual record of our operations, partnerships, and growth.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+
+  <!-- ── Navigation ───────────────────────────────────────────────────── -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-arabic">الصافي</span>
+        <span class="nav__logo-english">Safi Meats</span>
+      </a>
+
+      <button class="nav__hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="process.html" class="nav__link">Our Process</a>
+        <a href="products.html" class="nav__link">Products</a>
+        <a href="markets.html" class="nav__link">Markets</a>
+        <a href="gallery.html" class="nav__link nav__link--active">Gallery</a>
+        <a href="careers.html" class="nav__link">Careers</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+        <span class="nav__lang">EN | AR</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Page Header ──────────────────────────────────────────────────── -->
+  <header class="page-header">
+    <div class="container">
+      <span class="label">Media &amp; Operations</span>
+      <h1>Gallery</h1>
+      <p class="page-header__subtitle">A visual record of our operations, partnerships, and growth.</p>
+    </div>
+  </header>
+
+  <!-- ── Filter Buttons ───────────────────────────────────────────────── -->
+  <section class="gallery-filters">
+    <div class="container">
+      <div class="gallery-filters__list">
+        <button class="gallery-filters__btn active" data-filter="all">All</button>
+        <button class="gallery-filters__btn" data-filter="farms">Farms &amp; Livestock</button>
+        <button class="gallery-filters__btn" data-filter="processing">Processing &amp; Packaging</button>
+        <button class="gallery-filters__btn" data-filter="shipments">Shipments</button>
+        <button class="gallery-filters__btn" data-filter="team">Team &amp; Partnerships</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Masonry Grid ─────────────────────────────────────────────────── -->
+  <section class="gallery-grid section">
+    <div class="container">
+      <div class="gallery-grid__masonry reveal">
+
+        <!-- Item 1 — Farms -->
+        <div class="gallery-grid__item gallery-grid__item--tall" data-category="farms">
+          <div class="gallery-grid__placeholder">
+            <div class="gallery-grid__placeholder-icon">F</div>
+            <span class="gallery-grid__placeholder-label">Farms &amp; Livestock</span>
+          </div>
+          <div class="gallery-grid__caption">
+            <div class="gallery-grid__caption-title">Livestock Sourcing</div>
+            <div class="gallery-grid__caption-text">Our own farms across Punjab's livestock belt</div>
+          </div>
+        </div>
+
+        <!-- Item 2 — Processing -->
+        <div class="gallery-grid__item gallery-grid__item--medium" data-category="processing">
+          <div class="gallery-grid__placeholder">
+            <div class="gallery-grid__placeholder-icon">P</div>
+            <span class="gallery-grid__placeholder-label">Processing</span>
+          </div>
+          <div class="gallery-grid__caption">
+            <div class="gallery-grid__caption-title">Processing Facility</div>
+            <div class="gallery-grid__caption-text">Export-certified, halal-compliant processing</div>
+          </div>
+        </div>
+
+        <!-- Item 3 — Packaging -->
+        <div class="gallery-grid__item gallery-grid__item--short" data-category="processing">
+          <div class="gallery-grid__placeholder">
+            <div class="gallery-grid__placeholder-icon">Pk</div>
+            <span class="gallery-grid__placeholder-label">Packaging</span>
+          </div>
+          <div class="gallery-grid__caption">
+            <div class="gallery-grid__caption-title">Export Packaging</div>
+            <div class="gallery-grid__caption-text">Vacuum-sealed, fully labelled export-grade packaging</div>
+          </div>
+        </div>
+
+        <!-- Item 4 — Shipments -->
+        <div class="gallery-grid__item gallery-grid__item--medium" data-category="shipments">
+          <div class="gallery-grid__placeholder">
+            <div class="gallery-grid__placeholder-icon">S</div>
+            <span class="gallery-grid__placeholder-label">Shipments</span>
+          </div>
+          <div class="gallery-grid__caption">
+            <div class="gallery-grid__caption-title">Container Loading</div>
+            <div class="gallery-grid__caption-text">Temperature-controlled dispatch to port</div>
+          </div>
+        </div>
+
+        <!-- Item 5 — Team -->
+        <div class="gallery-grid__item gallery-grid__item--tall" data-category="team">
+          <div class="gallery-grid__placeholder">
+            <div class="gallery-grid__placeholder-icon">T</div>
+            <span class="gallery-grid__placeholder-label">Team &amp; Partnerships</span>
+          </div>
+          <div class="gallery-grid__caption">
+            <div class="gallery-grid__caption-title">Partnership Signing</div>
+            <div class="gallery-grid__caption-text">Building long-term trade relationships</div>
+          </div>
+        </div>
+
+        <!-- Item 6 — Certifications -->
+        <div class="gallery-grid__item gallery-grid__item--short" data-category="team">
+          <div class="gallery-grid__placeholder">
+            <div class="gallery-grid__placeholder-icon">C</div>
+            <span class="gallery-grid__placeholder-label">Certifications</span>
+          </div>
+          <div class="gallery-grid__caption">
+            <div class="gallery-grid__caption-title">Halal Certification</div>
+            <div class="gallery-grid__caption-text">Internationally recognised halal compliance</div>
+          </div>
+        </div>
+
+        <!-- Item 7 — Farms -->
+        <div class="gallery-grid__item gallery-grid__item--medium" data-category="farms">
+          <div class="gallery-grid__placeholder">
+            <div class="gallery-grid__placeholder-icon">F</div>
+            <span class="gallery-grid__placeholder-label">Farms &amp; Livestock</span>
+          </div>
+          <div class="gallery-grid__caption">
+            <div class="gallery-grid__caption-title">Breeding Programme</div>
+            <div class="gallery-grid__caption-text">Controlled breed selection and feed quality</div>
+          </div>
+        </div>
+
+        <!-- Item 8 — Facility Tours -->
+        <div class="gallery-grid__item gallery-grid__item--short" data-category="team">
+          <div class="gallery-grid__placeholder">
+            <div class="gallery-grid__placeholder-icon">FT</div>
+            <span class="gallery-grid__placeholder-label">Facility Tours</span>
+          </div>
+          <div class="gallery-grid__caption">
+            <div class="gallery-grid__caption-title">Client Facility Tour</div>
+            <div class="gallery-grid__caption-text">Transparency through open-door operations</div>
+          </div>
+        </div>
+
+        <!-- Item 9 — Freight -->
+        <div class="gallery-grid__item gallery-grid__item--tall" data-category="shipments">
+          <div class="gallery-grid__placeholder">
+            <div class="gallery-grid__placeholder-icon">Fr</div>
+            <span class="gallery-grid__placeholder-label">Freight Partners</span>
+          </div>
+          <div class="gallery-grid__caption">
+            <div class="gallery-grid__caption-title">Raziq International</div>
+            <div class="gallery-grid__caption-text">Logistics and freight partnership network</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Section ──────────────────────────────────────────────────── -->
+  <section class="cta-section">
+    <div class="container reveal">
+      <span class="label">See It In Person</span>
+      <h2>Schedule a Virtual Facility Tour</h2>
+      <p>Get an inside look at our operations, processing facilities, and supply chain in action.</p>
+      <a href="contact.html" class="btn btn--primary">Book a Tour</a>
+    </div>
+  </section>
+
+  <!-- ── Footer ───────────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <div class="footer__brand-name"><span>الصافي</span> SAFI</div>
+        <p class="footer__tagline">Premium halal meat, processed to uncompromising standards, delivered to discerning markets.</p>
+      </div>
+
+      <div class="footer__col">
+        <div class="footer__heading">Company</div>
+        <a href="about.html" class="footer__link">About</a>
+        <a href="process.html" class="footer__link">Our Process</a>
+        <a href="careers.html" class="footer__link">Careers</a>
+      </div>
+
+      <div class="footer__col">
+        <div class="footer__heading">Products</div>
+        <a href="products.html" class="footer__link">Beef</a>
+        <a href="products.html" class="footer__link">Mutton</a>
+        <a href="products.html" class="footer__link">Lamb</a>
+      </div>
+
+      <div class="footer__col">
+        <div class="footer__heading">Contact</div>
+        <span class="footer__link">info@safimeats.com</span>
+        <span class="footer__link">+92 XXX XXXXXXX</span>
+        <span class="footer__link">Punjab, Pakistan</span>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="footer__bottom-inner">
+        <span class="footer__copyright">&copy; 2025 Safi Meats. All rights reserved.</span>
+        <span class="footer__motto">Consistency is our currency of credibility.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/navigation.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
