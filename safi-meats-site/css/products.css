@@ -97,6 +97,78 @@
   }
 }
 
+/* ── Cuts Diagram Section ─────────────────────────────────────────────────── */
+
+.cuts-diagram-section {
+  padding: var(--space-xl) 0;
+  background: var(--primary);
+  color: var(--cream);
+}
+
+.cuts-diagram-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.cuts-diagram-header .label {
+  color: var(--accent);
+}
+
+.cuts-diagram-header h2 {
+  color: var(--cream);
+  margin-bottom: var(--space-xs);
+}
+
+.cuts-diagram-header p {
+  color: rgba(240, 237, 228, 0.6);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.cuts-diagram-placeholder {
+  border: 1px dashed rgba(240, 237, 228, 0.15);
+  border-radius: 8px;
+  padding: var(--space-lg);
+  text-align: center;
+}
+
+.cuts-diagram-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cuts-diagram-note h3 {
+  color: var(--cream);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  margin-bottom: var(--space-sm);
+}
+
+.cuts-diagram-note p {
+  color: rgba(240, 237, 228, 0.5);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-bottom: var(--space-md);
+}
+
+.cuts-diagram-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.cuts-diagram-tags span {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(240, 237, 228, 0.4);
+  background: rgba(240, 237, 228, 0.06);
+  border: 1px solid rgba(240, 237, 228, 0.1);
+  padding: 0.35rem 0.8rem;
+  border-radius: 3px;
+}
+
 /* ── Custom Supply ────────────────────────────────────────────────────────── */
 .custom-supply {
   background-color: var(--primary);
