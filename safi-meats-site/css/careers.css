@@ -1,0 +1,187 @@
+/* ==========================================================================
+   SAFI MEATS — Careers Page Styles
+   Distinct header, intro, open roles, hiring process
+   ========================================================================== */
+
+/* ── Careers Header (distinct accent variation) ───────────────────────────── */
+.page-header--careers {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 60%, var(--primary) 100%);
+}
+
+.page-header--careers::before {
+  background: radial-gradient(circle, rgba(184, 146, 74, 0.1) 0%, transparent 60%);
+}
+
+/* ── Intro Paragraph ──────────────────────────────────────────────────────── */
+.careers-intro {
+  padding: var(--space-xl) 0;
+}
+
+.careers-intro__text {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.7;
+  color: var(--text-light);
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+}
+
+/* ── Open Roles + Why Section ─────────────────────────────────────────────── */
+.careers-content {
+  background-color: var(--section-alt);
+  padding: var(--space-xl) 0;
+}
+
+.careers-content__roles h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.careers-content__role-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.careers-content__role-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: border-color var(--transition-fast);
+}
+
+.careers-content__role-item:hover {
+  border-color: var(--accent);
+}
+
+.careers-content__role-name {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.92rem;
+}
+
+.careers-content__role-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding: 0.3rem 0.6rem;
+  background-color: rgba(184, 146, 74, 0.08);
+  border-radius: var(--radius-sm);
+}
+
+.careers-content__why h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.careers-content__perks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.careers-content__perk {
+  font-size: 0.92rem;
+  color: var(--text-light);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.careers-content__perk::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.75rem;
+  width: 5px;
+  height: 5px;
+  background-color: var(--accent);
+  border-radius: 50%;
+}
+
+.careers-content__perk:last-child {
+  border-bottom: none;
+}
+
+/* ── Hiring Process ───────────────────────────────────────────────────────── */
+.hiring-process {
+  padding: var(--space-xl) 0;
+}
+
+.hiring-process__header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.hiring-process__header h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.hiring-process__steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+.hiring-step {
+  text-align: center;
+  position: relative;
+}
+
+.hiring-step__number {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--accent);
+  opacity: 0.5;
+  margin-bottom: 0.6rem;
+  line-height: 1;
+}
+
+.hiring-step__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.hiring-step__desc {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ── Connector lines between steps ────────────────────────────────────────── */
+.hiring-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 1.2rem;
+  right: -1rem;
+  width: calc(var(--space-md));
+  height: 1px;
+  background-color: var(--border);
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hiring-process__steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .hiring-step::after {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .hiring-process__steps {
+    grid-template-columns: 1fr;
+  }
+}
