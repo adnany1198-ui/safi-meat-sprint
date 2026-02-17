@@ -373,6 +373,12 @@
   }
 }
 
+/* Eliminate gap between banner and hero visual / story section */
+.page-header + .page-hero-visual,
+.page-header + .story-section {
+  margin-top: 0;
+}
+
 /* ── Footer ───────────────────────────────────────────────────────────────── */
 .footer {
   background-color: var(--primary);
