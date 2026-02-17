@@ -737,6 +737,86 @@
   background-color: var(--section-alt);
 }
 
+/* ── Page Hero Visual ─────────────────────────────────────────────────────── */
+/* Full-width visual/diagram placeholder that opens each inner page */
+
+.page-hero-visual {
+  background: var(--cream);
+  padding: 0;
+}
+
+.page-hero-visual--dark {
+  background: var(--primary);
+}
+
+.page-hero-visual-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-md) var(--space-md);
+}
+
+.page-hero-visual-placeholder {
+  width: 100%;
+  min-height: 500px;
+  background: var(--section-alt);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-lg);
+}
+
+.page-hero-visual-placeholder--dark {
+  background: rgba(240, 237, 228, 0.04);
+  border-color: rgba(240, 237, 228, 0.1);
+}
+
+.placeholder-content {
+  max-width: 600px;
+}
+
+.placeholder-content .label {
+  margin-bottom: var(--space-xs);
+}
+
+.page-hero-visual--dark .placeholder-content .label {
+  color: var(--accent);
+}
+
+.placeholder-content h2 {
+  margin-bottom: var(--space-xs);
+}
+
+.page-hero-visual--dark .placeholder-content h2 {
+  color: var(--cream);
+}
+
+.placeholder-content p {
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.page-hero-visual--dark .placeholder-content p {
+  color: rgba(240, 237, 228, 0.45);
+}
+
+.page-hero-visual--dark .cuts-diagram-tags span {
+  color: rgba(240, 237, 228, 0.35);
+  background: rgba(240, 237, 228, 0.06);
+  border: 1px solid rgba(240, 237, 228, 0.08);
+}
+
+@media (max-width: 768px) {
+  .page-hero-visual-placeholder {
+    min-height: 350px;
+    padding: var(--space-md);
+  }
+}
+
 /* ── Text Utilities ───────────────────────────────────────────────────────── */
 .text-center {
   text-align: center;
