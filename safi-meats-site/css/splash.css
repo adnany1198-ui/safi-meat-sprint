@@ -1,0 +1,251 @@
+/* ==========================================================================
+   SAFI MEATS — Splash Screen (index.html only)
+   Full viewport overlay with staggered brand animation
+   ========================================================================== */
+
+/* ── Splash Container ─────────────────────────────────────────────────────── */
+.splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10000;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+/* ── Gold radial glow ─────────────────────────────────────────────────────── */
+.splash::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(184, 146, 74, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Grain texture ────────────────────────────────────────────────────────── */
+.splash::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ── Dismiss state ────────────────────────────────────────────────────────── */
+.splash.dismiss {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* ── Splash content wrapper ───────────────────────────────────────────────── */
+.splash__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* ── Corner lines (decorative L-shapes) ───────────────────────────────────── */
+.splash__corner {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+  animation-delay: 1.8s;
+}
+
+.splash__corner::before,
+.splash__corner::after {
+  content: '';
+  position: absolute;
+  background-color: var(--accent);
+}
+
+/* Top-left */
+.splash__corner--tl {
+  top: 2rem;
+  left: 2rem;
+}
+.splash__corner--tl::before { top: 0; left: 0; width: 60px; height: 1px; }
+.splash__corner--tl::after  { top: 0; left: 0; width: 1px; height: 60px; }
+
+/* Top-right */
+.splash__corner--tr {
+  top: 2rem;
+  right: 2rem;
+}
+.splash__corner--tr::before { top: 0; right: 0; width: 60px; height: 1px; }
+.splash__corner--tr::after  { top: 0; right: 0; width: 1px; height: 60px; }
+
+/* Bottom-left */
+.splash__corner--bl {
+  bottom: 2rem;
+  left: 2rem;
+}
+.splash__corner--bl::before { bottom: 0; left: 0; width: 60px; height: 1px; }
+.splash__corner--bl::after  { bottom: 0; left: 0; width: 1px; height: 60px; }
+
+/* Bottom-right */
+.splash__corner--br {
+  bottom: 2rem;
+  right: 2rem;
+}
+.splash__corner--br::before { bottom: 0; right: 0; width: 60px; height: 1px; }
+.splash__corner--br::after  { bottom: 0; right: 0; width: 1px; height: 60px; }
+
+/* ── Splash elements ──────────────────────────────────────────────────────── */
+.splash__label {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0;
+  animation: fadeSlideUp 0.7s ease forwards;
+  animation-delay: 0.3s;
+  margin-bottom: 1.6rem;
+}
+
+.splash__arabic {
+  font-family: var(--font-arabic);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.1;
+  opacity: 0;
+  animation: fadeSlideUp 0.7s ease forwards;
+  animation-delay: 0.6s;
+  margin-bottom: 0.4rem;
+}
+
+.splash__safi {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: var(--accent);
+  opacity: 0;
+  animation: fadeSlideUp 0.7s ease forwards;
+  animation-delay: 1s;
+  margin-bottom: 1rem;
+}
+
+.splash__divider {
+  width: 0;
+  height: 1px;
+  background-color: var(--accent);
+  opacity: 0;
+  animation: expandLine 0.6s ease forwards;
+  animation-delay: 1.2s;
+  margin-bottom: 1rem;
+}
+
+.splash__meats {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: rgba(240, 237, 228, 0.3);
+  opacity: 0;
+  animation: fadeSlideUp 0.7s ease forwards;
+  animation-delay: 1.4s;
+  margin-bottom: 2rem;
+}
+
+.splash__tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(0.85rem, 1.5vw, 1.05rem);
+  color: rgba(240, 237, 228, 0.45);
+  opacity: 0;
+  animation: fadeSlideUp 0.7s ease forwards;
+  animation-delay: 1.8s;
+  max-width: 400px;
+}
+
+.splash__footer {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(240, 237, 228, 0.2);
+  opacity: 0;
+  animation: fadeSlideUp 0.7s ease forwards;
+  animation-delay: 2.2s;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+/* ── Keyframes ────────────────────────────────────────────────────────────── */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes expandLine {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 80px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Page Content (hidden behind splash) ──────────────────────────────────── */
+.page-content {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.page-content.visible {
+  opacity: 1;
+}
+
+/* ── Hide corners on mobile ───────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .splash__corner {
+    display: none;
+  }
+}

@@ -1,0 +1,450 @@
+/* ==========================================================================
+   SAFI MEATS — Home Page Styles
+   Hero, stats, who/what, markets strip, partners, team, enquiry
+   ========================================================================== */
+
+/* ── Hero Section ─────────────────────────────────────────────────────────── */
+.hero {
+  background-color: var(--primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: 8rem 0 0;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(184, 146, 74, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero__content {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero .label {
+  color: var(--accent);
+}
+
+.hero h1 {
+  color: var(--cream);
+  max-width: 800px;
+  margin-bottom: var(--space-sm);
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero__subline {
+  color: rgba(240, 237, 228, 0.65);
+  font-size: 1.05rem;
+  max-width: 680px;
+  margin-bottom: var(--space-md);
+  line-height: 1.8;
+}
+
+.hero__trust-line {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--accent);
+  margin-bottom: var(--space-md);
+}
+
+/* ── Hero Buttons ─────────────────────────────────────────────────────────── */
+.hero__buttons {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-lg);
+}
+
+/* ── Hero Credibility Strip ───────────────────────────────────────────────── */
+.hero__credibility {
+  border-top: 1px solid rgba(240, 237, 228, 0.08);
+  padding: var(--space-md) 0;
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.hero__credibility p {
+  font-size: 0.85rem;
+  color: rgba(240, 237, 228, 0.4);
+  max-width: 400px;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.hero__credibility p::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  width: 3px;
+  height: 14px;
+  background-color: var(--accent);
+  border-radius: 2px;
+}
+
+/* ── Live Stats Section ───────────────────────────────────────────────────── */
+.home-stats {
+  background-color: var(--primary);
+  padding: 0 0 var(--space-xl);
+}
+
+.home-stats__header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.home-stats__header h2 {
+  color: var(--cream);
+  margin-bottom: var(--space-sm);
+}
+
+.home-stats__header p {
+  color: rgba(240, 237, 228, 0.55);
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
+/* ── Who We Are / What We Supply ──────────────────────────────────────────── */
+.home-about {
+  padding: var(--space-xl) 0;
+}
+
+.home-about__col h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.home-about__col p {
+  margin-bottom: var(--space-sm);
+  font-size: 0.95rem;
+}
+
+.home-about__products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.home-about__product-card {
+  background: var(--section-alt);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-align: center;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.home-about__product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.home-about__product-img {
+  height: 140px;
+  background-color: var(--cream-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.home-about__product-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  padding: 0.8rem;
+}
+
+@media (max-width: 600px) {
+  .home-about__products {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Markets Strip ────────────────────────────────────────────────────────── */
+.markets-strip {
+  background-color: var(--primary);
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+
+.markets-strip h2 {
+  color: var(--cream);
+  margin-bottom: var(--space-lg);
+}
+
+.markets-strip__flags {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.markets-strip__country {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.markets-strip__flag {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: rgba(240, 237, 228, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  border: 1px solid rgba(240, 237, 228, 0.1);
+}
+
+.markets-strip__name {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(240, 237, 228, 0.5);
+}
+
+@media (max-width: 600px) {
+  .markets-strip__flags {
+    gap: var(--space-sm);
+  }
+
+  .markets-strip__flag {
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+  }
+}
+
+/* ── Processing Partners ──────────────────────────────────────────────────── */
+.partners {
+  background-color: var(--section-alt);
+  padding: var(--space-xl) 0;
+}
+
+.partners__header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.partners__header h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.partners__header p {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.partners__card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  text-align: center;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.partners__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.partners__logo-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--section-alt);
+  margin: 0 auto var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.partners__card-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+
+.partners__card-role {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ── Team Preview ─────────────────────────────────────────────────────────── */
+.team-preview {
+  padding: var(--space-xl) 0;
+}
+
+.team-preview__header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.team-preview__header h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.team-preview__header p {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.team-card {
+  text-align: center;
+}
+
+.team-card__photo {
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: var(--section-alt);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.team-card__name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.team-card__title {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* ── Enquiry Section ──────────────────────────────────────────────────────── */
+.enquiry {
+  background-color: var(--primary);
+  padding: var(--space-xl) 0;
+}
+
+.enquiry__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.enquiry__info h2 {
+  color: var(--cream);
+  margin-bottom: var(--space-sm);
+}
+
+.enquiry__info p {
+  color: rgba(240, 237, 228, 0.65);
+  margin-bottom: var(--space-md);
+  font-size: 1rem;
+}
+
+.enquiry__contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.enquiry__contact-item {
+  font-size: 0.9rem;
+  color: rgba(240, 237, 228, 0.55);
+}
+
+.enquiry__contact-item strong {
+  color: rgba(240, 237, 228, 0.75);
+  font-weight: 500;
+  display: inline-block;
+  min-width: 80px;
+}
+
+.enquiry__form {
+  background: rgba(240, 237, 228, 0.03);
+  border: 1px solid rgba(240, 237, 228, 0.06);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+}
+
+.enquiry__form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+@media (max-width: 900px) {
+  .enquiry__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .enquiry__form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Responsive Hero ──────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero {
+    padding: 7rem 0 0;
+  }
+
+  .hero__credibility {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero__buttons {
+    flex-direction: column;
+  }
+
+  .hero__buttons .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
