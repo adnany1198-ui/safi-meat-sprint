@@ -42,10 +42,6 @@
   padding-top: var(--space-md);
 }
 
-.story-narrative .label {
-  margin-bottom: var(--space-sm);
-}
-
 /* The opening line — large, serif, impactful */
 .story-lead {
   font-family: var(--font-display);
