@@ -347,7 +347,7 @@
 /* ── Page Header (inner pages) — slim title-only bar ─────────────────────── */
 .page-header {
   background: var(--primary);
-  padding: 5.5rem 0 1.2rem;
+  padding: 5.5rem 0 1rem;
   position: relative;
 }
 
@@ -373,10 +373,22 @@
   }
 }
 
-/* Eliminate gap between banner and hero visual / story section */
+/* Eliminate gap between banner and following dark sections */
 .page-header + .page-hero-visual,
-.page-header + .story-section {
+.page-header + .story-section,
+.page-header + .process-stages,
+.page-header + .product-section,
+.page-header + .section--dark {
   margin-top: 0;
+}
+
+/* Tighter page-header when followed immediately by a dark section */
+.page-header + .process-stages {
+  padding-top: var(--space-sm);
+}
+
+.page-header + .product-section {
+  padding-top: var(--space-md);
 }
 
 /* ── Footer ───────────────────────────────────────────────────────────────── */

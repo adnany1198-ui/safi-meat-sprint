@@ -5,11 +5,7 @@
 
 /* ── Careers Header (distinct accent variation) ───────────────────────────── */
 .page-header--careers {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 60%, var(--primary) 100%);
-}
-
-.page-header--careers::before {
-  background: radial-gradient(circle, rgba(184, 146, 74, 0.1) 0%, transparent 60%);
+  background: var(--primary);
 }
 
 /* ── Intro Paragraph (dark) ──────────────────────────────────────────────── */
@@ -29,6 +25,7 @@
 /* ── Open Roles + Why Section (dark) ─────────────────────────────────────── */
 .careers-content.section--dark {
   background-color: var(--primary);
+  padding-top: var(--space-md);
 }
 
 .careers-content.section--dark h3 {

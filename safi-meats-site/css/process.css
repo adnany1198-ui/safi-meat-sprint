@@ -6,17 +6,23 @@
 /* ── Section ─────────────────────────────────────────────────────────────── */
 .process-stages {
   background-color: var(--primary);
-  padding: var(--space-xl) 0;
+  padding: var(--space-md) 0 var(--space-lg);
 }
 
 .process-stages__header {
   text-align: center;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+.process-stages__header .label {
+  font-size: 0.6rem;
+  margin-bottom: 0.3rem;
 }
 
 .process-stages__header h2 {
   color: var(--cream);
-  margin-bottom: var(--space-sm);
+  margin-bottom: 0;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
 }
 
 /* ==========================================================================
@@ -24,7 +30,7 @@
    ========================================================================== */
 
 .process-tabs {
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
   position: relative;
 }
 
@@ -137,19 +143,19 @@
 .process-panel {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
+  gap: var(--space-md);
   align-items: start;
   background: rgba(240, 237, 228, 0.03);
   border: 1px solid rgba(240, 237, 228, 0.06);
   border-radius: var(--radius-lg);
-  padding: var(--space-lg);
-  min-height: 380px;
+  padding: var(--space-md);
+  min-height: 280px;
 }
 
 /* ── Panel Image ─────────────────────────────────────────────────────────── */
 .process-panel__image-placeholder {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   background: rgba(240, 237, 228, 0.05);
   border: 1px solid rgba(240, 237, 228, 0.08);
   border-radius: 6px;
@@ -189,10 +195,10 @@
 }
 
 .process-panel__desc {
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: 0.95rem;
+  line-height: 1.7;
   color: rgba(240, 237, 228, 0.6);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
 .process-panel__overseer {

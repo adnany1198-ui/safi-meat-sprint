@@ -5,16 +5,21 @@
 
 /* ── Product Section ─────────────────────────────────────────────────────── */
 .product-section {
-  padding: var(--space-xl) 0;
+  padding: var(--space-lg) 0;
+}
+
+.product-section:first-of-type {
+  padding-top: var(--space-md);
 }
 
 .product-section.section--dark {
   background-color: var(--primary);
 }
 
-/* Alternating variant — slightly different shade for visual break */
+/* Alternating variant — same base green, only a very subtle tonal shift */
 .product-section--alt.section--dark {
-  background-color: var(--primary-light);
+  background-color: var(--primary);
+  border-top: 1px solid rgba(240, 237, 228, 0.05);
 }
 
 .product-section__grid {
