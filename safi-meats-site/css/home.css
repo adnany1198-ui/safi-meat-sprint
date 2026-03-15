@@ -1,6 +1,6 @@
 /* ==========================================================================
    SAFI MEATS — Home Page Styles
-   Hero, stats, who/what, markets strip, partners, team, enquiry
+   Hero, story, mission, about, values, markets strip, partners, team, enquiry
    ========================================================================== */
 
 /* ── Hero Section ─────────────────────────────────────────────────────────── */
@@ -104,41 +104,25 @@
   border-radius: 2px;
 }
 
-/* ── Live Stats Section ───────────────────────────────────────────────────── */
-.home-stats {
+/* ── Built for Global Scale / Premium Protein (dark variant) ─────────────── */
+.home-about.section--dark {
   background-color: var(--primary);
-  padding: 0 0 var(--space-xl);
+  padding: var(--space-xl) 0;
 }
 
-.home-stats__header {
-  text-align: center;
-  margin-bottom: var(--space-lg);
-}
-
-.home-stats__header h2 {
+.home-about.section--dark .home-about__col h2 {
   color: var(--cream);
   margin-bottom: var(--space-sm);
 }
 
-.home-stats__header p {
-  color: rgba(240, 237, 228, 0.55);
-  max-width: 600px;
-  margin: 0 auto;
-  font-size: 1rem;
-}
-
-/* ── Who We Are / What We Supply ──────────────────────────────────────────── */
-.home-about {
-  padding: var(--space-xl) 0;
-}
-
-.home-about__col h2 {
-  margin-bottom: var(--space-sm);
-}
-
-.home-about__col p {
+.home-about.section--dark .home-about__col p {
+  color: rgba(240, 237, 228, 0.65);
   margin-bottom: var(--space-sm);
   font-size: 0.95rem;
+}
+
+.home-about.section--dark .two-col--divided::after {
+  background-color: rgba(240, 237, 228, 0.1);
 }
 
 .home-about__products {
@@ -148,36 +132,37 @@
   margin-top: var(--space-md);
 }
 
-.home-about__product-card {
-  background: var(--section-alt);
+.home-about.section--dark .home-about__product-card {
+  background: rgba(240, 237, 228, 0.05);
+  border: 1px solid rgba(240, 237, 228, 0.08);
   border-radius: var(--radius-lg);
   overflow: hidden;
   text-align: center;
   transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
-.home-about__product-card:hover {
+.home-about.section--dark .home-about__product-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(184, 146, 74, 0.3);
 }
 
-.home-about__product-img {
+.home-about.section--dark .home-about__product-img {
   height: 140px;
-  background-color: var(--cream-dark);
+  background-color: rgba(240, 237, 228, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-muted);
+  color: rgba(240, 237, 228, 0.3);
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-.home-about__product-name {
+.home-about.section--dark .home-about__product-name {
   font-family: var(--font-display);
   font-size: 1.05rem;
   font-weight: 600;
-  color: var(--text);
+  color: var(--cream);
   padding: 0.8rem;
 }
 
@@ -248,10 +233,18 @@
   }
 }
 
-/* ── Processing Partners ──────────────────────────────────────────────────── */
-.partners {
-  background-color: var(--section-alt);
+/* ── Processing Partners (dark variant) ──────────────────────────────────── */
+.partners.section--dark {
+  background-color: var(--primary);
   padding: var(--space-xl) 0;
+}
+
+.partners.section--dark .partners__header h2 {
+  color: var(--cream);
+}
+
+.partners.section--dark .partners__header p {
+  color: rgba(240, 237, 228, 0.65);
 }
 
 .partners__header {
@@ -268,51 +261,60 @@
   margin: 0 auto;
 }
 
-.partners__card {
-  background: var(--white);
-  border: 1px solid var(--border);
+.partners__card--dark {
+  background: rgba(240, 237, 228, 0.04);
+  border: 1px solid rgba(240, 237, 228, 0.08);
   border-radius: var(--radius-lg);
   padding: var(--space-md);
   text-align: center;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  transition: transform var(--transition-base), border-color var(--transition-base);
 }
 
-.partners__card:hover {
+.partners__card--dark:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(184, 146, 74, 0.3);
 }
 
-.partners__logo-placeholder {
+.partners__card--dark .partners__logo-placeholder {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: var(--section-alt);
+  background-color: rgba(240, 237, 228, 0.06);
   margin: 0 auto var(--space-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-muted);
+  color: rgba(240, 237, 228, 0.3);
   font-size: 0.6rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.partners__card-title {
+.partners__card--dark .partners__card-title {
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--text);
+  color: var(--cream);
   margin-bottom: 0.3rem;
 }
 
-.partners__card-role {
+.partners__card--dark .partners__card-role {
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: rgba(240, 237, 228, 0.45);
 }
 
-/* ── Team Preview ─────────────────────────────────────────────────────────── */
-.team-preview {
+/* ── Team Preview (dark + hover interaction) ─────────────────────────────── */
+.team-preview.section--dark {
+  background-color: var(--primary);
   padding: var(--space-xl) 0;
+}
+
+.team-preview.section--dark .team-preview__header h2 {
+  color: var(--cream);
+}
+
+.team-preview.section--dark .team-preview__header p {
+  color: rgba(240, 237, 228, 0.65);
 }
 
 .team-preview__header {
@@ -333,32 +335,58 @@
   text-align: center;
 }
 
-.team-card__photo {
+.team-card--hover {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.team-card--hover .team-card__photo {
   width: 100%;
   aspect-ratio: 1;
-  background-color: var(--section-alt);
+  background-color: rgba(240, 237, 228, 0.06);
   border-radius: var(--radius-lg);
-  margin-bottom: var(--space-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-muted);
+  color: rgba(240, 237, 228, 0.3);
   font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  transition: filter var(--transition-base);
+  margin-bottom: 0;
 }
 
-.team-card__name {
+.team-card--hover .team-card__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-sm);
+  background: linear-gradient(to top, rgba(20, 42, 33, 0.9) 0%, transparent 100%);
+  transform: translateY(100%);
+  transition: transform var(--transition-base);
+}
+
+.team-card--hover:hover .team-card__info {
+  transform: translateY(0);
+}
+
+.team-card--hover:hover .team-card__photo {
+  filter: brightness(0.7);
+}
+
+.team-card--hover .team-card__name {
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 600;
-  color: var(--text);
+  color: var(--cream);
   margin-bottom: 0.2rem;
 }
 
-.team-card__title {
+.team-card--hover .team-card__title {
   font-size: 0.82rem;
-  color: var(--text-muted);
+  color: rgba(240, 237, 228, 0.65);
 }
 
 /* ── Enquiry Section ──────────────────────────────────────────────────────── */

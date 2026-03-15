@@ -1,15 +1,20 @@
 /* ==========================================================================
    SAFI MEATS — Products Page Styles
-   Product sections, custom supply, packaging, catalogue
+   Product sections with dark green backgrounds
    ========================================================================== */
 
-/* ── Product Section (alternating layout) ─────────────────────────────────── */
+/* ── Product Section ─────────────────────────────────────────────────────── */
 .product-section {
   padding: var(--space-xl) 0;
 }
 
-.product-section:nth-child(even) {
-  background-color: var(--section-alt);
+.product-section.section--dark {
+  background-color: var(--primary);
+}
+
+/* Alternating variant — slightly different shade for visual break */
+.product-section--alt.section--dark {
+  background-color: var(--primary-light);
 }
 
 .product-section__grid {
@@ -19,37 +24,39 @@
   align-items: center;
 }
 
-.product-section:nth-child(even) .product-section__grid {
+.product-section--alt .product-section__grid {
   direction: rtl;
 }
 
-.product-section:nth-child(even) .product-section__grid > * {
+.product-section--alt .product-section__grid > * {
   direction: ltr;
+}
+
+.product-section.section--dark .product-section__content h2 {
+  color: var(--cream);
+  margin-bottom: var(--space-sm);
+}
+
+.product-section.section--dark .product-section__content p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(240, 237, 228, 0.65);
 }
 
 .product-section__content .label {
   margin-bottom: 0.8rem;
 }
 
-.product-section__content h2 {
-  margin-bottom: var(--space-sm);
-}
-
-.product-section__content p {
-  font-size: 0.95rem;
-  line-height: 1.8;
-}
-
 .product-section__cuts {
   margin-top: var(--space-sm);
 }
 
-.product-section__cuts-title {
+.product-section.section--dark .product-section__cuts-title {
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: rgba(240, 237, 228, 0.45);
   margin-bottom: 0.6rem;
 }
 
@@ -59,25 +66,26 @@
   gap: 0.4rem;
 }
 
-.product-section__cut-tag {
+.product-section.section--dark .product-section__cut-tag {
   display: inline-block;
   font-size: 0.78rem;
   font-weight: 500;
-  color: var(--text-light);
+  color: rgba(240, 237, 228, 0.55);
   padding: 0.3rem 0.7rem;
-  background-color: rgba(184, 146, 74, 0.08);
+  background-color: rgba(184, 146, 74, 0.1);
   border-radius: var(--radius-sm);
 }
 
-.product-section__image {
+.product-section.section--dark .product-section__image {
   width: 100%;
   height: 400px;
-  background-color: var(--cream-dark);
+  background-color: rgba(240, 237, 228, 0.06);
+  border: 1px solid rgba(240, 237, 228, 0.08);
   border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-muted);
+  color: rgba(240, 237, 228, 0.3);
   font-size: 0.8rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -88,175 +96,11 @@
     grid-template-columns: 1fr;
   }
 
-  .product-section:nth-child(even) .product-section__grid {
+  .product-section--alt .product-section__grid {
     direction: ltr;
   }
 
-  .product-section__image {
+  .product-section.section--dark .product-section__image {
     height: 280px;
   }
-}
-
-/* ── Cuts Diagram Section ─────────────────────────────────────────────────── */
-
-.cuts-diagram-section {
-  padding: var(--space-xl) 0;
-  background: var(--primary);
-  color: var(--cream);
-}
-
-.cuts-diagram-header {
-  text-align: center;
-  margin-bottom: var(--space-lg);
-}
-
-.cuts-diagram-header .label {
-  color: var(--accent);
-}
-
-.cuts-diagram-header h2 {
-  color: var(--cream);
-  margin-bottom: var(--space-xs);
-}
-
-.cuts-diagram-header p {
-  color: rgba(240, 237, 228, 0.6);
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.cuts-diagram-placeholder {
-  border: 1px dashed rgba(240, 237, 228, 0.15);
-  border-radius: 8px;
-  padding: var(--space-lg);
-  text-align: center;
-}
-
-.cuts-diagram-inner {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.cuts-diagram-note h3 {
-  color: var(--cream);
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-  margin-bottom: var(--space-sm);
-}
-
-.cuts-diagram-note p {
-  color: rgba(240, 237, 228, 0.5);
-  font-size: 0.9rem;
-  line-height: 1.8;
-  margin-bottom: var(--space-md);
-}
-
-.cuts-diagram-tags {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.cuts-diagram-tags span {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(240, 237, 228, 0.4);
-  background: rgba(240, 237, 228, 0.06);
-  border: 1px solid rgba(240, 237, 228, 0.1);
-  padding: 0.35rem 0.8rem;
-  border-radius: 3px;
-}
-
-/* ── Custom Supply ────────────────────────────────────────────────────────── */
-.custom-supply {
-  background-color: var(--primary);
-  padding: var(--space-xl) 0;
-  text-align: center;
-}
-
-.custom-supply h2 {
-  color: var(--cream);
-  margin-bottom: var(--space-sm);
-}
-
-.custom-supply p {
-  color: rgba(240, 237, 228, 0.65);
-  max-width: 600px;
-  margin: 0 auto var(--space-md);
-  font-size: 1.05rem;
-}
-
-/* ── Packaging Section ────────────────────────────────────────────────────── */
-.packaging {
-  padding: var(--space-xl) 0;
-}
-
-.packaging__header {
-  text-align: center;
-  margin-bottom: var(--space-lg);
-}
-
-.packaging__header h2 {
-  margin-bottom: var(--space-sm);
-}
-
-.packaging__card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-md);
-  text-align: center;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
-}
-
-.packaging__card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-card-hover);
-}
-
-.packaging__icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: rgba(184, 146, 74, 0.08);
-  margin: 0 auto var(--space-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--accent);
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.packaging__card h3 {
-  font-size: 1.15rem;
-  margin-bottom: 0.5rem;
-}
-
-.packaging__card p {
-  font-size: 0.9rem;
-  color: var(--text-light);
-  line-height: 1.7;
-}
-
-/* ── Catalogue Placeholder ────────────────────────────────────────────────── */
-.catalogue {
-  background-color: var(--section-alt);
-  padding: var(--space-xl) 0;
-  text-align: center;
-}
-
-.catalogue h2 {
-  margin-bottom: var(--space-sm);
-}
-
-.catalogue p {
-  max-width: 500px;
-  margin: 0 auto;
-  font-size: 1rem;
-  color: var(--text-light);
 }

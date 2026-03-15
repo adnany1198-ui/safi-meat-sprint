@@ -1,10 +1,11 @@
 /* ==========================================================================
    SAFI MEATS — Contact Page Styles
-   Contact details, enquiry form, office cards
+   Contact details, enquiry form, office cards (dark background)
    ========================================================================== */
 
 /* ── Contact Grid ─────────────────────────────────────────────────────────── */
-.contact-main {
+.contact-main.section--dark {
+  background-color: var(--primary);
   padding: var(--space-xl) 0;
 }
 
@@ -15,8 +16,9 @@
   align-items: start;
 }
 
-/* ── Contact Details (left) ───────────────────────────────────────────────── */
-.contact-details h2 {
+/* ── Contact Details (left — dark) ───────────────────────────────────────── */
+.section--dark .contact-details h2 {
+  color: var(--cream);
   margin-bottom: var(--space-md);
 }
 
@@ -32,32 +34,24 @@
   gap: 0.2rem;
 }
 
-.contact-details__item-label {
+.section--dark .contact-details__item-label {
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: rgba(240, 237, 228, 0.45);
 }
 
-.contact-details__item-value {
+.section--dark .contact-details__item-value {
   font-size: 1rem;
-  color: var(--text);
+  color: var(--cream);
   font-weight: 500;
 }
 
-.contact-details__item-value a {
-  color: var(--accent);
-  transition: color var(--transition-fast);
-}
-
-.contact-details__item-value a:hover {
-  color: var(--accent-dark);
-}
-
-/* ── Enquiry Form (right) ─────────────────────────────────────────────────── */
-.contact-form-wrapper {
-  background-color: var(--primary);
+/* ── Enquiry Form (right — on dark bg, form has subtle container) ────────── */
+.section--dark .contact-form-wrapper {
+  background-color: rgba(240, 237, 228, 0.03);
+  border: 1px solid rgba(240, 237, 228, 0.06);
   border-radius: var(--radius-lg);
   padding: var(--space-md);
 }
@@ -80,10 +74,14 @@
   gap: var(--space-sm);
 }
 
-/* ── Office Cards ─────────────────────────────────────────────────────────── */
-.offices {
-  background-color: var(--section-alt);
+/* ── Office Cards (dark) ─────────────────────────────────────────────────── */
+.offices.section--dark {
+  background-color: var(--primary);
   padding: var(--space-xl) 0;
+}
+
+.offices.section--dark .offices__header h2 {
+  color: var(--cream);
 }
 
 .offices__header {
@@ -95,25 +93,25 @@
   margin-bottom: var(--space-sm);
 }
 
-.office-card {
-  background: var(--white);
-  border: 1px solid var(--border);
+.office-card--dark {
+  background: rgba(240, 237, 228, 0.04);
+  border: 1px solid rgba(240, 237, 228, 0.08);
   border-radius: var(--radius-lg);
   padding: var(--space-md);
   text-align: center;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  transition: transform var(--transition-base), border-color var(--transition-base);
 }
 
-.office-card:hover {
+.office-card--dark:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(184, 146, 74, 0.3);
 }
 
-.office-card__icon {
+.office-card--dark .office-card__icon {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background-color: rgba(184, 146, 74, 0.08);
+  background-color: rgba(184, 146, 74, 0.1);
   margin: 0 auto var(--space-sm);
   display: flex;
   align-items: center;
@@ -125,14 +123,15 @@
   text-transform: uppercase;
 }
 
-.office-card h3 {
+.office-card--dark h3 {
   font-size: 1.1rem;
+  color: var(--cream);
   margin-bottom: 0.3rem;
 }
 
-.office-card p {
+.office-card--dark p {
   font-size: 0.88rem;
-  color: var(--text-muted);
+  color: rgba(240, 237, 228, 0.55);
   line-height: 1.6;
 }
 

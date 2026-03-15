@@ -1,69 +1,136 @@
 /* ==========================================================================
    SAFI MEATS — Process Page Styles
-   Interactive map placeholder, 7-step process flow
+   Horizontal process timeline
    ========================================================================== */
 
-/* ── Map Placeholder ──────────────────────────────────────────────────────── */
-.process-map {
-  padding: var(--space-xl) 0 var(--space-lg);
+/* ── Timeline Section ────────────────────────────────────────────────────── */
+.process-timeline {
+  background-color: var(--primary);
+  padding: var(--space-xl) 0;
 }
 
-.process-map__placeholder {
-  background-color: var(--cream);
-  border: 1px dashed var(--border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg) var(--space-md);
+.process-timeline__header {
   text-align: center;
-  max-width: var(--container-narrow);
-  margin: 0 auto;
+  margin-bottom: var(--space-lg);
 }
 
-.process-map__placeholder h3 {
-  color: var(--text);
-  margin-bottom: 0.6rem;
+.process-timeline__header h2 {
+  color: var(--cream);
+  margin-bottom: var(--space-sm);
 }
 
-.process-map__placeholder p {
-  color: var(--text-muted);
-  font-size: 0.9rem;
+/* ── Horizontal Scroll Container ─────────────────────────────────────────── */
+.process-timeline__scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 var(--container-pad) var(--space-md);
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) rgba(240, 237, 228, 0.08);
 }
 
-/* ── Process Flow ─────────────────────────────────────────────────────────── */
-.process-flow {
-  padding: 0 0 var(--space-xl);
+.process-timeline__scroll::-webkit-scrollbar {
+  height: 6px;
 }
 
-.process-step {
-  display: grid;
-  grid-template-columns: 100px 1fr;
+.process-timeline__scroll::-webkit-scrollbar-track {
+  background: rgba(240, 237, 228, 0.06);
+  border-radius: 3px;
+}
+
+.process-timeline__scroll::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+.process-timeline__track {
+  display: flex;
   gap: var(--space-md);
-  padding: var(--space-lg) 0;
-  border-bottom: 1px solid var(--border);
-  align-items: start;
+  min-width: max-content;
+  padding-bottom: var(--space-sm);
+  position: relative;
 }
 
-.process-step:first-child {
-  padding-top: 0;
+/* Connector line running through all steps */
+.process-timeline__track::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  right: 28px;
+  height: 1px;
+  background: rgba(240, 237, 228, 0.12);
+  z-index: 0;
 }
 
-.process-step:last-child {
-  border-bottom: none;
+/* ── Individual Step ─────────────────────────────────────────────────────── */
+.process-timeline__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+  min-width: 280px;
+  background: rgba(240, 237, 228, 0.03);
+  border: 1px solid rgba(240, 237, 228, 0.08);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  cursor: pointer;
+  transition: border-color var(--transition-base), background-color var(--transition-base);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-family: inherit;
+  color: inherit;
 }
 
-.process-step__number {
+.process-timeline__step:hover,
+.process-timeline__step[aria-expanded="true"] {
+  border-color: rgba(184, 146, 74, 0.4);
+  background: rgba(240, 237, 228, 0.06);
+}
+
+/* ── Step Number ─────────────────────────────────────────────────────────── */
+.process-timeline__step-number {
   font-family: var(--font-display);
-  font-size: 3.2rem;
+  font-size: 2rem;
   font-weight: 600;
   color: var(--accent);
   line-height: 1;
   opacity: 0.6;
+  margin-bottom: var(--space-sm);
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(184, 146, 74, 0.08);
 }
 
-.process-step__content {
-  max-width: 640px;
+/* ── Step Image Placeholder ──────────────────────────────────────────────── */
+.process-timeline__step-img {
+  width: 100%;
+  height: 140px;
+  background: rgba(240, 237, 228, 0.05);
+  border: 1px solid rgba(240, 237, 228, 0.06);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(240, 237, 228, 0.2);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-sm);
 }
 
-.process-step__label {
+/* ── Step Content ────────────────────────────────────────────────────────── */
+.process-timeline__step-content {
+  text-align: left;
+  width: 100%;
+}
+
+.process-timeline__step-label {
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.18em;
@@ -72,35 +139,51 @@
   margin-bottom: 0.5rem;
 }
 
-.process-step__content h3 {
-  margin-bottom: 0.8rem;
+.process-timeline__step-content h3 {
+  color: var(--cream);
+  margin-bottom: 0.6rem;
+  font-size: 1.2rem;
 }
 
-.process-step__content p {
-  font-size: 0.95rem;
-  line-height: 1.8;
+.process-timeline__step-content p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: rgba(240, 237, 228, 0.55);
   margin-bottom: var(--space-sm);
 }
 
-.process-step__overseer {
+.process-timeline__overseer {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   color: var(--accent);
-  padding: 0.4rem 0.8rem;
+  padding: 0.35rem 0.7rem;
   background-color: rgba(184, 146, 74, 0.08);
   border-radius: var(--radius-sm);
 }
 
-/* ── Responsive ───────────────────────────────────────────────────────────── */
+/* ── Active step state ───────────────────────────────────────────────────── */
+.process-timeline__step[aria-expanded="true"] .process-timeline__step-number {
+  opacity: 1;
+  background: rgba(184, 146, 74, 0.15);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
 @media (max-width: 600px) {
-  .process-step {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
+  .process-timeline__step {
+    width: 240px;
+    min-width: 240px;
+    padding: var(--space-sm);
   }
 
-  .process-step__number {
-    font-size: 2.4rem;
+  .process-timeline__step-number {
+    font-size: 1.6rem;
+    width: 44px;
+    height: 44px;
+  }
+
+  .process-timeline__step-img {
+    height: 100px;
   }
 }

@@ -1,9 +1,9 @@
 /* ==========================================================================
-   SAFI MEATS — About Page Styles
-   Company story, mission, values, leadership
+   SAFI MEATS — About / Story Styles
+   Company story, mission, values (used on Home page)
    ========================================================================== */
 
-/* ── Story Section — dark background, compact, one viewport ──────────────── */
+/* ── Story Section — dark background, compact ────────────────────────────── */
 
 .story-section {
   background: var(--primary);
@@ -14,6 +14,11 @@
 /* No gap between page-header and story */
 .page-header + .story-section {
   margin-top: 0;
+}
+
+/* No gap between hero and story */
+.hero + .story-section {
+  padding-top: var(--space-xl);
 }
 
 .story-grid {
@@ -138,49 +143,23 @@
   line-height: 1.8;
 }
 
-/* ── Leadership Section ───────────────────────────────────────────────────── */
-.about-leadership {
-  background-color: var(--section-alt);
-  padding: var(--space-xl) 0;
+/* ── Values — dark variant ───────────────────────────────────────────────── */
+.section--dark .about-values__header h2 {
+  color: var(--cream);
 }
 
-.about-leadership__header {
-  text-align: center;
-  margin-bottom: var(--space-lg);
+.section--dark .about-values__header p {
+  color: rgba(240, 237, 228, 0.65);
 }
 
-.about-leadership__header h2 {
-  margin-bottom: var(--space-sm);
+.about-values__card--dark {
+  border-top-color: var(--accent);
 }
 
-.leader-card {
-  text-align: center;
+.about-values__card--dark h3 {
+  color: var(--cream);
 }
 
-.leader-card__photo {
-  width: 100%;
-  aspect-ratio: 1;
-  background-color: var(--cream-dark);
-  border-radius: var(--radius-lg);
-  margin-bottom: var(--space-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.leader-card__name {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 0.2rem;
-}
-
-.leader-card__role {
-  font-size: 0.82rem;
-  color: var(--text-muted);
+.about-values__card--dark p {
+  color: rgba(240, 237, 228, 0.6);
 }
