@@ -1,0 +1,152 @@
+/* ==========================================================================
+   SAFI MEATS — Media Page Styles
+   Filterable gallery grid on dark green background
+   ========================================================================== */
+
+/* ── Intro ────────────────────────────────────────────────────────────────── */
+.media-intro {
+  background-color: var(--primary);
+  padding: var(--space-md) 0 var(--space-sm);
+}
+
+.media-intro__text {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.7;
+  color: rgba(240, 237, 228, 0.6);
+  max-width: var(--container-narrow);
+}
+
+/* ── Gallery Section ─────────────────────────────────────────────────────── */
+.media-gallery {
+  background-color: var(--primary);
+  padding: var(--space-md) 0 var(--space-xl);
+}
+
+/* ── Filters ─────────────────────────────────────────────────────────────── */
+.media-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: var(--space-lg);
+}
+
+.media-filter {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(240, 237, 228, 0.4);
+  background: rgba(240, 237, 228, 0.04);
+  border: 1px solid rgba(240, 237, 228, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.media-filter:hover {
+  color: rgba(240, 237, 228, 0.7);
+  border-color: rgba(240, 237, 228, 0.15);
+}
+
+.media-filter--active {
+  color: var(--primary);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.media-filter--active:hover {
+  color: var(--primary);
+  background: var(--accent-light);
+  border-color: var(--accent-light);
+}
+
+/* ── Grid ─────────────────────────────────────────────────────────────────── */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+/* ── Individual Item ──────────────────────────────────────────────────────── */
+.media-item {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: rgba(240, 237, 228, 0.03);
+  border: 1px solid rgba(240, 237, 228, 0.06);
+  transition: transform var(--transition-base), border-color var(--transition-base);
+}
+
+.media-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(184, 146, 74, 0.3);
+}
+
+.media-item--hidden {
+  display: none;
+}
+
+/* ── Item Image ───────────────────────────────────────────────────────────── */
+.media-item__image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: rgba(240, 237, 228, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(240, 237, 228, 0.18);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* ── Item Caption ─────────────────────────────────────────────────────────── */
+.media-item__caption {
+  padding: 0.8rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.media-item__tag {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.media-item__label {
+  font-size: 0.85rem;
+  color: rgba(240, 237, 228, 0.6);
+  line-height: 1.5;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .media-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+}
+
+@media (max-width: 600px) {
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .media-filters {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: var(--space-xs);
+    gap: 0.4rem;
+  }
+
+  .media-filter {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
