@@ -3,24 +3,10 @@
    Filterable gallery grid on dark green background
    ========================================================================== */
 
-/* ── Intro ────────────────────────────────────────────────────────────────── */
-.media-intro {
-  background-color: var(--primary);
-  padding: var(--space-md) 0 var(--space-sm);
-}
-
-.media-intro__text {
-  font-family: var(--font-display);
-  font-size: clamp(1.05rem, 2vw, 1.25rem);
-  line-height: 1.7;
-  color: rgba(240, 237, 228, 0.6);
-  max-width: var(--container-narrow);
-}
-
 /* ── Gallery Section ─────────────────────────────────────────────────────── */
 .media-gallery {
   background-color: var(--primary);
-  padding: var(--space-md) 0 var(--space-xl);
+  padding: var(--space-sm) 0 var(--space-xl);
 }
 
 /* ── Filters ─────────────────────────────────────────────────────────────── */
