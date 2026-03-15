@@ -1,189 +1,273 @@
 /* ==========================================================================
    SAFI MEATS — Process Page Styles
-   Horizontal process timeline
+   Stage-based horizontal tab panel with timeline progression
    ========================================================================== */
 
-/* ── Timeline Section ────────────────────────────────────────────────────── */
-.process-timeline {
+/* ── Section ─────────────────────────────────────────────────────────────── */
+.process-stages {
   background-color: var(--primary);
   padding: var(--space-xl) 0;
 }
 
-.process-timeline__header {
+.process-stages__header {
   text-align: center;
   margin-bottom: var(--space-lg);
 }
 
-.process-timeline__header h2 {
+.process-stages__header h2 {
   color: var(--cream);
   margin-bottom: var(--space-sm);
 }
 
-/* ── Horizontal Scroll Container ─────────────────────────────────────────── */
-.process-timeline__scroll {
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  padding: 0 var(--container-pad) var(--space-md);
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent) rgba(240, 237, 228, 0.08);
-}
+/* ==========================================================================
+   TAB BAR — Horizontal stage selector that reads as a timeline
+   ========================================================================== */
 
-.process-timeline__scroll::-webkit-scrollbar {
-  height: 6px;
-}
-
-.process-timeline__scroll::-webkit-scrollbar-track {
-  background: rgba(240, 237, 228, 0.06);
-  border-radius: 3px;
-}
-
-.process-timeline__scroll::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 3px;
-}
-
-.process-timeline__track {
-  display: flex;
-  gap: var(--space-md);
-  min-width: max-content;
-  padding-bottom: var(--space-sm);
+.process-tabs {
+  margin-bottom: var(--space-lg);
   position: relative;
 }
 
-/* Connector line running through all steps */
-.process-timeline__track::before {
+.process-tabs__track {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  gap: 2px;
+}
+
+/* Connector line behind all tabs — the timeline thread */
+.process-tabs__track::before {
   content: '';
   position: absolute;
-  top: 28px;
-  left: 28px;
-  right: 28px;
+  top: 19px; /* vertically centered on the number circles */
+  left: 24px;
+  right: 24px;
   height: 1px;
   background: rgba(240, 237, 228, 0.12);
   z-index: 0;
 }
 
-/* ── Individual Step ─────────────────────────────────────────────────────── */
-.process-timeline__step {
+/* Progress fill — the gold line up to the active tab */
+.process-tabs__track::after {
+  content: '';
+  position: absolute;
+  top: 19px;
+  left: 24px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.4;
+  z-index: 0;
+  width: var(--progress-width, 0%);
+  transition: width var(--transition-base);
+}
+
+/* ── Individual Tab ──────────────────────────────────────────────────────── */
+.process-tab {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 280px;
-  min-width: 280px;
-  background: rgba(240, 237, 228, 0.03);
-  border: 1px solid rgba(240, 237, 228, 0.08);
-  border-radius: var(--radius-lg);
-  padding: var(--space-md);
+  gap: 0.6rem;
+  background: none;
+  border: none;
   cursor: pointer;
-  transition: border-color var(--transition-base), background-color var(--transition-base);
+  padding: 0;
   position: relative;
   z-index: 1;
-  text-align: center;
+  flex: 1;
+  min-width: 0;
   font-family: inherit;
   color: inherit;
 }
 
-.process-timeline__step:hover,
-.process-timeline__step[aria-expanded="true"] {
-  border-color: rgba(184, 146, 74, 0.4);
-  background: rgba(240, 237, 228, 0.06);
-}
-
-/* ── Step Number ─────────────────────────────────────────────────────────── */
-.process-timeline__step-number {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--accent);
-  line-height: 1;
-  opacity: 0.6;
-  margin-bottom: var(--space-sm);
-  width: 56px;
-  height: 56px;
+/* ── Tab Number (circle node on the timeline) ────────────────────────────── */
+.process-tab__number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  background: rgba(184, 146, 74, 0.08);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(240, 237, 228, 0.35);
+  background: rgba(240, 237, 228, 0.04);
+  border: 1px solid rgba(240, 237, 228, 0.1);
+  transition: all var(--transition-base);
 }
 
-/* ── Step Image Placeholder ──────────────────────────────────────────────── */
-.process-timeline__step-img {
-  width: 100%;
-  height: 140px;
-  background: rgba(240, 237, 228, 0.05);
+.process-tab:hover .process-tab__number {
+  color: var(--accent);
+  border-color: rgba(184, 146, 74, 0.3);
+  background: rgba(184, 146, 74, 0.06);
+}
+
+.process-tab--active .process-tab__number {
+  color: var(--primary);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ── Tab Title ───────────────────────────────────────────────────────────── */
+.process-tab__title {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(240, 237, 228, 0.3);
+  transition: color var(--transition-base);
+  text-align: center;
+  line-height: 1.3;
+}
+
+.process-tab:hover .process-tab__title {
+  color: rgba(240, 237, 228, 0.6);
+}
+
+.process-tab--active .process-tab__title {
+  color: var(--accent);
+}
+
+/* ==========================================================================
+   CONTENT PANEL — Single display area updated by tab selection
+   ========================================================================== */
+
+.process-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+  background: rgba(240, 237, 228, 0.03);
   border: 1px solid rgba(240, 237, 228, 0.06);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  min-height: 380px;
+}
+
+/* ── Panel Image ─────────────────────────────────────────────────────────── */
+.process-panel__image-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: rgba(240, 237, 228, 0.05);
+  border: 1px solid rgba(240, 237, 228, 0.08);
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: rgba(240, 237, 228, 0.2);
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  margin-bottom: var(--space-sm);
 }
 
-/* ── Step Content ────────────────────────────────────────────────────────── */
-.process-timeline__step-content {
-  text-align: left;
-  width: 100%;
+/* ── Panel Content ───────────────────────────────────────────────────────── */
+.process-panel__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
 }
 
-.process-timeline__step-label {
+.process-panel__step-label {
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 0.5rem;
-}
-
-.process-timeline__step-content h3 {
-  color: var(--cream);
   margin-bottom: 0.6rem;
-  font-size: 1.2rem;
 }
 
-.process-timeline__step-content p {
-  font-size: 0.88rem;
-  line-height: 1.7;
-  color: rgba(240, 237, 228, 0.55);
+.process-panel__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 600;
+  color: var(--cream);
   margin-bottom: var(--space-sm);
+  line-height: 1.2;
 }
 
-.process-timeline__overseer {
+.process-panel__desc {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(240, 237, 228, 0.6);
+  margin-bottom: var(--space-md);
+}
+
+.process-panel__overseer {
   display: inline-block;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   color: var(--accent);
-  padding: 0.35rem 0.7rem;
+  padding: 0.4rem 0.8rem;
   background-color: rgba(184, 146, 74, 0.08);
   border-radius: var(--radius-sm);
+  align-self: flex-start;
 }
 
-/* ── Active step state ───────────────────────────────────────────────────── */
-.process-timeline__step[aria-expanded="true"] .process-timeline__step-number {
+/* ── Panel transition (content swap) ─────────────────────────────────────── */
+.process-panel--transitioning .process-panel__content,
+.process-panel--transitioning .process-panel__image {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.process-panel__content,
+.process-panel__image {
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
   opacity: 1;
-  background: rgba(184, 146, 74, 0.15);
+  transform: translateY(0);
 }
 
-/* ── Responsive ──────────────────────────────────────────────────────────── */
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .process-panel {
+    grid-template-columns: 1fr;
+    padding: var(--space-md);
+    min-height: auto;
+  }
+
+  .process-panel__image-placeholder {
+    aspect-ratio: 16 / 9;
+  }
+}
+
 @media (max-width: 600px) {
-  .process-timeline__step {
-    width: 240px;
-    min-width: 240px;
+  /* Stack tabs into a scrollable row on mobile */
+  .process-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-left: calc(-1 * var(--container-pad));
+    margin-right: calc(-1 * var(--container-pad));
+    padding: 0 var(--container-pad);
+  }
+
+  .process-tabs__track {
+    min-width: max-content;
+    gap: var(--space-sm);
+    padding-bottom: var(--space-sm);
+  }
+
+  .process-tab {
+    min-width: 72px;
+  }
+
+  .process-tab__number {
+    width: 34px;
+    height: 34px;
+    font-size: 0.85rem;
+  }
+
+  .process-tab__title {
+    font-size: 0.6rem;
+  }
+
+  .process-panel {
     padding: var(--space-sm);
-  }
-
-  .process-timeline__step-number {
-    font-size: 1.6rem;
-    width: 44px;
-    height: 44px;
-  }
-
-  .process-timeline__step-img {
-    height: 100px;
   }
 }

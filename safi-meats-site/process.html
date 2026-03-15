@@ -49,103 +49,61 @@
     </div>
   </header>
 
-  <!-- ── Horizontal Process Timeline ──────────────────────────────────── -->
-  <section class="process-timeline section--dark">
+  <!-- ── Process Stage Tabs + Panel ───────────────────────────────────── -->
+  <section class="process-stages section--dark">
     <div class="container">
-      <div class="process-timeline__header reveal">
+      <div class="process-stages__header reveal">
         <span class="label">Supply Chain Journey</span>
         <h2>From Source to Destination</h2>
       </div>
-    </div>
 
-    <div class="process-timeline__scroll">
-      <div class="process-timeline__track">
-
-        <!-- Step 01 -->
-        <button class="process-timeline__step reveal" data-step="1" aria-expanded="false">
-          <div class="process-timeline__step-number">01</div>
-          <div class="process-timeline__step-img">Image</div>
-          <div class="process-timeline__step-content">
-            <div class="process-timeline__step-label">Step One</div>
-            <h3>Controlled Sourcing</h3>
-            <p>Sourced from our own farms and vetted partner farms across Punjab's livestock belt. We control breed selection, feed quality, and animal health from the start.</p>
-            <span class="process-timeline__overseer">Overseen by: Livestock &amp; Sourcing Team</span>
-          </div>
-        </button>
-
-        <!-- Step 02 -->
-        <button class="process-timeline__step reveal" data-step="2" aria-expanded="false">
-          <div class="process-timeline__step-number">02</div>
-          <div class="process-timeline__step-img">Image</div>
-          <div class="process-timeline__step-content">
-            <div class="process-timeline__step-label">Step Two</div>
-            <h3>Approved Processing Partners</h3>
-            <p>All processing occurs at export-certified, halal-compliant facilities that meet strict international hygiene standards.</p>
-            <span class="process-timeline__overseer">Overseen by: Processing Operations</span>
-          </div>
-        </button>
-
-        <!-- Step 03 -->
-        <button class="process-timeline__step reveal" data-step="3" aria-expanded="false">
-          <div class="process-timeline__step-number">03</div>
-          <div class="process-timeline__step-img">Image</div>
-          <div class="process-timeline__step-content">
-            <div class="process-timeline__step-label">Step Three</div>
-            <h3>Quality Inspection</h3>
-            <p>Multi-stage quality checks at pre-slaughter, during processing, and post-packaging. Every batch is graded before it advances.</p>
-            <span class="process-timeline__overseer">Overseen by: Quality Assurance</span>
-          </div>
-        </button>
-
-        <!-- Step 04 -->
-        <button class="process-timeline__step reveal" data-step="4" aria-expanded="false">
-          <div class="process-timeline__step-number">04</div>
-          <div class="process-timeline__step-img">Image</div>
-          <div class="process-timeline__step-content">
-            <div class="process-timeline__step-label">Step Four</div>
-            <h3>Cold Chain Integrity</h3>
-            <p>Temperature-controlled storage and transport from processing facility to port. No breaks in the chain.</p>
-            <span class="process-timeline__overseer">Overseen by: Logistics Team</span>
-          </div>
-        </button>
-
-        <!-- Step 05 -->
-        <button class="process-timeline__step reveal" data-step="5" aria-expanded="false">
-          <div class="process-timeline__step-number">05</div>
-          <div class="process-timeline__step-img">Image</div>
-          <div class="process-timeline__step-content">
-            <div class="process-timeline__step-label">Step Five</div>
-            <h3>Packaging</h3>
-            <p>Vacuum-sealed, export-grade packaging with full labelling — product type, cut, weight, batch number, processing date, and halal certification.</p>
-            <span class="process-timeline__overseer">Overseen by: Packaging &amp; QA</span>
-          </div>
-        </button>
-
-        <!-- Step 06 -->
-        <button class="process-timeline__step reveal" data-step="6" aria-expanded="false">
-          <div class="process-timeline__step-number">06</div>
-          <div class="process-timeline__step-img">Image</div>
-          <div class="process-timeline__step-content">
-            <div class="process-timeline__step-label">Step Six</div>
-            <h3>Documentation</h3>
-            <p>Complete export documentation including health certificates, halal certificates, phytosanitary documents, commercial invoices, and customs clearance.</p>
-            <span class="process-timeline__overseer">Overseen by: Export Documentation</span>
-          </div>
-        </button>
-
-        <!-- Step 07 -->
-        <button class="process-timeline__step reveal" data-step="7" aria-expanded="false">
-          <div class="process-timeline__step-number">07</div>
-          <div class="process-timeline__step-img">Image</div>
-          <div class="process-timeline__step-content">
-            <div class="process-timeline__step-label">Step Seven</div>
-            <h3>Shipment (Air &amp; Sea)</h3>
-            <p>Final dispatch via air freight for urgent orders or sea freight for bulk shipments. Full tracking provided to buyer from departure to arrival.</p>
-            <span class="process-timeline__overseer">Overseen by: Logistics &amp; Freight</span>
-          </div>
-        </button>
-
+      <!-- ── Horizontal Tab Bar (Timeline) ──────────────────────────── -->
+      <div class="process-tabs" role="tablist" aria-label="Process stages">
+        <div class="process-tabs__track">
+          <button class="process-tab process-tab--active" role="tab" aria-selected="true" aria-controls="stage-panel" data-stage="0">
+            <span class="process-tab__number">01</span>
+            <span class="process-tab__title">Sourcing</span>
+          </button>
+          <button class="process-tab" role="tab" aria-selected="false" aria-controls="stage-panel" data-stage="1">
+            <span class="process-tab__number">02</span>
+            <span class="process-tab__title">Processing</span>
+          </button>
+          <button class="process-tab" role="tab" aria-selected="false" aria-controls="stage-panel" data-stage="2">
+            <span class="process-tab__number">03</span>
+            <span class="process-tab__title">Inspection</span>
+          </button>
+          <button class="process-tab" role="tab" aria-selected="false" aria-controls="stage-panel" data-stage="3">
+            <span class="process-tab__number">04</span>
+            <span class="process-tab__title">Cold Chain</span>
+          </button>
+          <button class="process-tab" role="tab" aria-selected="false" aria-controls="stage-panel" data-stage="4">
+            <span class="process-tab__number">05</span>
+            <span class="process-tab__title">Packaging</span>
+          </button>
+          <button class="process-tab" role="tab" aria-selected="false" aria-controls="stage-panel" data-stage="5">
+            <span class="process-tab__number">06</span>
+            <span class="process-tab__title">Documentation</span>
+          </button>
+          <button class="process-tab" role="tab" aria-selected="false" aria-controls="stage-panel" data-stage="6">
+            <span class="process-tab__number">07</span>
+            <span class="process-tab__title">Shipment</span>
+          </button>
+        </div>
       </div>
+
+      <!-- ── Main Content Panel ─────────────────────────────────────── -->
+      <div class="process-panel" id="stage-panel" role="tabpanel">
+        <div class="process-panel__image">
+          <div class="process-panel__image-placeholder">Stage Image</div>
+        </div>
+        <div class="process-panel__content">
+          <div class="process-panel__step-label">Step One</div>
+          <h3 class="process-panel__title">Controlled Sourcing</h3>
+          <p class="process-panel__desc">Sourced from our own farms and vetted partner farms across Punjab's livestock belt. We control breed selection, feed quality, and animal health from the start.</p>
+          <span class="process-panel__overseer">Overseen by: Livestock &amp; Sourcing Team</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -200,5 +158,6 @@
   <!-- Scripts -->
   <script src="js/navigation.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/process.js"></script>
 </body>
 </html>
