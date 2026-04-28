@@ -1,0 +1,135 @@
+/* ==========================================================================
+   SAFI MEATS — Eid Launch Page Styles
+   Hero overrides, Eid visual cue, about condensation, enquiry CTA group
+   ========================================================================== */
+
+/* ── Eid Hero ────────────────────────────────────────────────────────────── */
+.eid-hero {
+  background-color: var(--primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: 8rem 0 0;
+  overflow: hidden;
+}
+
+.eid-hero::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(184, 146, 74, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Subtle geometric Eid motif — eight-pointed star pattern */
+.eid-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 460px;
+  height: 460px;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image:
+    radial-gradient(circle at 50% 50%, transparent 36%, var(--accent) 36%, var(--accent) 38%, transparent 38%),
+    linear-gradient(0deg, var(--accent) 1px, transparent 1px),
+    linear-gradient(90deg, var(--accent) 1px, transparent 1px),
+    linear-gradient(45deg, var(--accent) 1px, transparent 1px),
+    linear-gradient(-45deg, var(--accent) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse at 100% 100%, black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at 100% 100%, black 0%, transparent 70%);
+}
+
+.eid-hero__content {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.eid-hero .label {
+  color: var(--accent);
+}
+
+.eid-hero h1 {
+  color: var(--cream);
+  max-width: 800px;
+  margin-bottom: var(--space-sm);
+}
+
+.eid-hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.eid-hero__subline {
+  color: rgba(240, 237, 228, 0.65);
+  font-size: 1.05rem;
+  max-width: 620px;
+  margin-bottom: var(--space-md);
+  line-height: 1.8;
+}
+
+/* ── Eid About (condensed two-col) ───────────────────────────────────────── */
+.eid-about.section--dark {
+  background-color: var(--primary);
+  padding: var(--space-xl) 0;
+}
+
+.eid-about .eid-about__col h2 {
+  color: var(--cream);
+  margin-bottom: var(--space-sm);
+}
+
+.eid-about .eid-about__col p {
+  color: rgba(240, 237, 228, 0.65);
+  margin-bottom: var(--space-sm);
+  font-size: 0.95rem;
+}
+
+.eid-about .two-col--divided::after {
+  background-color: rgba(240, 237, 228, 0.1);
+}
+
+/* ── Eid Enquiry ─────────────────────────────────────────────────────────── */
+.eid-enquiry {
+  background-color: var(--primary);
+  padding: var(--space-xl) 0;
+}
+
+.eid-enquiry__ctas {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-top: var(--space-md);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .eid-hero {
+    padding: 7rem 0 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .eid-enquiry__ctas {
+    flex-direction: column;
+  }
+
+  .eid-enquiry__ctas .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
