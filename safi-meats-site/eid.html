@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eid Launch — Safi Meats</title>
-  <meta name="description" content="Safi Meats launches this Eid. Premium halal beef, mutton, and lamb — sourced from our own farms, exported to global markets.">
+  <meta name="description" content="Safi Meats launches this Eid. Premium halal beef, mutton, and lamb — export allocations now open for Qurbani season.">
 
   <style>body { font-family: Georgia, 'Times New Roman', serif; }</style>
 
@@ -29,267 +29,281 @@
   </div>
 
   <!-- ================================================================== -->
-  <!-- PAGE CONTENT                                                        -->
+  <!-- PAGE CONTENT — No nav. Linear flow.                                 -->
   <!-- ================================================================== -->
   <div id="page-content" class="page-content">
 
-    <!-- ── Navigation ─────────────────────────────────────────────────── -->
-    <nav class="nav">
-      <div class="nav__inner">
-        <a href="index.html" class="nav__logo">
-          <span class="nav__logo-arabic">الصافي</span>
-          <span class="nav__logo-english">Safi Meats</span>
-        </a>
-
-        <button class="nav__hamburger" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <div class="nav__links">
-          <a href="index.html" class="nav__link">Home</a>
-          <a href="process.html" class="nav__link">Our Process</a>
-          <a href="products.html" class="nav__link">Products</a>
-          <a href="gallery.html" class="nav__link">Gallery</a>
-          <a href="careers.html" class="nav__link">Careers</a>
-          <a href="contact.html" class="nav__link">Contact</a>
-          <span class="nav__lang">EN | AR</span>
-        </div>
-      </div>
-    </nav>
-
     <!-- ================================================================ -->
-    <!-- 1. HERO — Eid Launch                                              -->
+    <!-- 1. HERO — Single viewport. Must convert on its own.               -->
     <!-- ================================================================ -->
     <section class="eid-hero">
       <div class="eid-hero__content">
-        <span class="label">Launching this Eid</span>
-        <h1>From Our Farms to <em>Global Markets.</em></h1>
 
-        <!-- TODO: final subhead copy from Adnan — 2 sentences max, condensed positioning statement -->
-        <p class="eid-hero__subline">Premium halal beef, mutton, and lamb — sourced from our own farms in Pakistan, processed to international standards, and delivered directly to buyers across the Gulf and Asia.</p>
-
-        <p class="hero__trust-line">Consistency is our currency of credibility.</p>
-
-        <div class="hero__buttons">
-          <a href="contact.html" class="btn btn--primary">Request Pricing</a>
-          <a href="contact.html" class="btn btn--outline">Book a Call</a>
-          <a href="contact.html" class="btn btn--outline">WhatsApp</a>
+        <!-- Eid greeting — prominent, Arabic + English -->
+        <div class="eid-hero__greeting">
+          <span class="eid-hero__greeting-ar">عيد مبارك</span>
+          <span class="eid-hero__greeting-en">Eid Mubarak</span>
         </div>
 
-        <div class="hero__credibility">
-          <p>We supply international buyers directly — no brokers or middlemen.</p>
-          <p>Fully controlled sourcing, processing, and export execution.</p>
+        <!-- Wordmark -->
+        <div class="eid-hero__wordmark">
+          <span class="eid-hero__wordmark-ar">الصافي</span>
+          <span class="eid-hero__wordmark-en">Safi Meats</span>
         </div>
+
+        <!-- Launch headline -->
+        <!-- TODO: final headline copy from Adnan -->
+        <h1>Qurbani Season Export Allocations <em>Now Open.</em></h1>
+
+        <!-- One-line positioning -->
+        <!-- TODO: final positioning line from Adnan -->
+        <p class="eid-hero__position">Premium halal beef, mutton, and lamb — sourced from our own farms in Pakistan, exported directly to buyers across the Gulf and Asia.</p>
+
+        <!-- CTAs -->
+        <div class="eid-hero__ctas">
+          <!-- TODO: final WhatsApp link from Adnan -->
+          <a href="contact.html" class="btn btn--primary">WhatsApp</a>
+          <a href="#eid-form" class="btn btn--outline">Request Pricing</a>
+        </div>
+
       </div>
+
+      <!-- Subtle geometric motif — rendered via CSS -->
     </section>
 
     <!-- ================================================================ -->
-    <!-- 2. WHO WE ARE + WHAT WE SUPPLY                                    -->
+    <!-- 2. OFFER STRIP — What's available this Eid window                 -->
     <!-- ================================================================ -->
-    <section class="eid-about section section--dark">
+    <section class="eid-offer section--dark">
       <div class="container">
-        <div class="two-col two-col--divided">
+        <span class="label">Eid Allocations</span>
+        <h2 class="eid-offer__heading reveal">Available This Season</h2>
 
-          <!-- Left: Who We Are (condensed) -->
-          <div class="eid-about__col reveal">
-            <span class="label">Who We Are</span>
-            <h2>Built for Global Scale</h2>
-            <!-- TODO: final copy from Adnan — condensed 2-paragraph version of Who We Are -->
-            <p>Safi Meats is a premium halal meat export company based in Pakistan, supplying international buyers across the Middle East and Asia with fully traceable beef, mutton, and lamb.</p>
-            <p>We operate with full control across sourcing, quality assurance, documentation, and shipment execution — led by a commercially experienced team with deep roots in agriculture and international trade.</p>
+        <div class="eid-offer__grid reveal">
+          <!-- TODO: final product specs / lot sizes / dispatch dates from Adnan -->
+          <div class="eid-offer__item">
+            <div class="eid-offer__item-icon">Beef</div>
+            <h3>Beef</h3>
+            <p>Whole carcass, primal cuts, custom portions. Chilled or frozen.</p>
+            <!-- TODO: lot sizes, dispatch dates -->
           </div>
-
-          <!-- Right: What We Supply -->
-          <div class="eid-about__col reveal">
-            <span class="label">What We Supply</span>
-            <h2>Premium Protein</h2>
-            <!-- TODO: final intro line from Adnan -->
-            <p>All products are prepared to export and halal standards with options for chilled, frozen, and custom-cut specifications.</p>
-
-            <div class="home-about__products">
-              <div class="home-about__product-card">
-                <div class="home-about__product-img">Beef</div>
-                <div class="home-about__product-name">Beef</div>
-              </div>
-              <div class="home-about__product-card">
-                <div class="home-about__product-img">Mutton</div>
-                <div class="home-about__product-name">Mutton</div>
-              </div>
-              <div class="home-about__product-card">
-                <div class="home-about__product-img">Lamb</div>
-                <div class="home-about__product-name">Lamb</div>
-              </div>
-            </div>
+          <div class="eid-offer__item">
+            <div class="eid-offer__item-icon">Mutton</div>
+            <h3>Mutton</h3>
+            <p>Whole carcass, primal cuts, custom portions. Chilled or frozen.</p>
+            <!-- TODO: lot sizes, dispatch dates -->
           </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================================================ -->
-    <!-- 3. MARKETS WE SERVE                                               -->
-    <!-- ================================================================ -->
-    <section class="markets-strip">
-      <div class="container">
-        <span class="label">International Reach</span>
-        <h2>Markets We Serve</h2>
-
-        <div class="markets-strip__flags reveal">
-          <div class="markets-strip__country">
-            <div class="markets-strip__flag">&#x1F1F8;&#x1F1E6;</div>
-            <span class="markets-strip__name">Saudi Arabia</span>
+          <div class="eid-offer__item">
+            <div class="eid-offer__item-icon">Lamb</div>
+            <h3>Lamb</h3>
+            <p>Whole carcass, primal cuts, custom portions. Chilled or frozen.</p>
+            <!-- TODO: lot sizes, dispatch dates -->
           </div>
-          <div class="markets-strip__country">
-            <div class="markets-strip__flag">&#x1F1E6;&#x1F1EA;</div>
-            <span class="markets-strip__name">UAE</span>
-          </div>
-          <div class="markets-strip__country">
-            <div class="markets-strip__flag">&#x1F1F6;&#x1F1E6;</div>
-            <span class="markets-strip__name">Qatar</span>
-          </div>
-          <div class="markets-strip__country">
-            <div class="markets-strip__flag">&#x1F1F0;&#x1F1FC;</div>
-            <span class="markets-strip__name">Kuwait</span>
-          </div>
-          <div class="markets-strip__country">
-            <div class="markets-strip__flag">&#x1F1F4;&#x1F1F2;</div>
-            <span class="markets-strip__name">Oman</span>
-          </div>
-          <div class="markets-strip__country">
-            <div class="markets-strip__flag">&#x1F1E7;&#x1F1ED;</div>
-            <span class="markets-strip__name">Bahrain</span>
-          </div>
-          <div class="markets-strip__country">
-            <div class="markets-strip__flag">&#x1F1F2;&#x1F1FE;</div>
-            <span class="markets-strip__name">Malaysia</span>
-          </div>
-          <div class="markets-strip__country">
-            <div class="markets-strip__flag">&#x1F1E8;&#x1F1F3;</div>
-            <span class="markets-strip__name">China</span>
-          </div>
-          <div class="markets-strip__country">
-            <div class="markets-strip__flag">&#x1F1F9;&#x1F1EF;</div>
-            <span class="markets-strip__name">Tajikistan</span>
+          <div class="eid-offer__item">
+            <div class="eid-offer__item-icon">Custom</div>
+            <h3>Custom Orders</h3>
+            <p>Bespoke cut specifications and packaging to buyer requirements.</p>
+            <!-- TODO: lead time detail -->
           </div>
         </div>
       </div>
     </section>
 
     <!-- ================================================================ -->
-    <!-- 4. ENQUIRY / BOOK CALL                                            -->
+    <!-- 3. CREDENTIALS ROW — Trust marks                                  -->
     <!-- ================================================================ -->
-    <section class="eid-enquiry">
+    <section class="eid-credentials">
       <div class="container">
-        <div class="enquiry__grid">
+        <div class="eid-credentials__row reveal">
+          <!-- TODO: final certification names / logos from Adnan -->
+          <div class="eid-credentials__mark">
+            <span class="eid-credentials__mark-label">Halal Certified</span>
+          </div>
+          <div class="eid-credentials__mark">
+            <span class="eid-credentials__mark-label">HACCP Compliant</span>
+          </div>
+          <div class="eid-credentials__mark">
+            <span class="eid-credentials__mark-label">Export Licensed</span>
+          </div>
+          <div class="eid-credentials__mark">
+            <span class="eid-credentials__mark-label">Origin: Pakistan</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- Left: Info -->
-          <div class="enquiry__info reveal">
-            <span class="label">Get In Touch</span>
-            <h2>Ready to Source Premium Meat?</h2>
-            <!-- TODO: final CTA copy from Adnan -->
-            <p>Whether you're an international buyer, distributor, or hospitality group — we'd like to hear from you.</p>
+    <!-- ================================================================ -->
+    <!-- 4. SPECS / CAPABILITY BLOCK                                       -->
+    <!-- ================================================================ -->
+    <section class="eid-specs section section--dark">
+      <div class="container">
+        <span class="label">Capability</span>
+        <h2 class="reveal">Export-Ready Operations</h2>
 
-            <div class="enquiry__contact-list">
-              <!-- TODO: final contact details from Adnan -->
-              <div class="enquiry__contact-item"><strong>Email:</strong> info@safimeats.com</div>
-              <div class="enquiry__contact-item"><strong>Phone:</strong> +92 XXX XXXXXXX</div>
-              <div class="enquiry__contact-item"><strong>WhatsApp:</strong> WhatsApp Direct</div>
+        <div class="eid-specs__grid reveal">
+          <!-- TODO: final figures from Adnan -->
+          <div class="eid-specs__item">
+            <div class="eid-specs__value">Volume</div>
+            <div class="eid-specs__detail">Scalable capacity to meet seasonal and standing-order demand</div>
+          </div>
+          <div class="eid-specs__item">
+            <div class="eid-specs__value">Cold Chain</div>
+            <div class="eid-specs__detail">Temperature-controlled processing, storage, and transport from facility to port</div>
+          </div>
+          <div class="eid-specs__item">
+            <div class="eid-specs__value">Destinations</div>
+            <div class="eid-specs__detail">Saudi Arabia, UAE, Qatar, Kuwait, Oman, Bahrain, Malaysia, China</div>
+          </div>
+          <div class="eid-specs__item">
+            <div class="eid-specs__value">Lead Time</div>
+            <!-- TODO: final lead time from Adnan -->
+            <div class="eid-specs__detail">Order-to-dispatch within agreed timelines. Air and sea freight available.</div>
+          </div>
+        </div>
+
+        <!-- Repeat CTAs after specs -->
+        <div class="eid-cta-repeat reveal">
+          <a href="contact.html" class="btn btn--primary">WhatsApp</a>
+          <a href="#eid-form" class="btn btn--outline">Request Pricing</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- 5. PROOF — Credibility block                                      -->
+    <!-- ================================================================ -->
+    <section class="eid-proof section--dark">
+      <div class="container">
+        <div class="eid-proof__block reveal">
+          <span class="label">Track Record</span>
+          <!-- TODO: final proof points from Adnan — past shipment markets, repeat-buyer count, or one client quote -->
+          <div class="eid-proof__stats">
+            <div class="eid-proof__stat">
+              <div class="eid-proof__stat-value">9</div>
+              <div class="eid-proof__stat-label">Target Markets</div>
             </div>
-
-            <div class="eid-enquiry__ctas">
-              <a href="contact.html" class="btn btn--primary">Submit Enquiry</a>
-              <a href="contact.html" class="btn btn--outline">Book a Call</a>
-              <a href="contact.html" class="btn btn--outline">WhatsApp</a>
+            <div class="eid-proof__stat">
+              <div class="eid-proof__stat-value">3</div>
+              <div class="eid-proof__stat-label">Product Lines</div>
+            </div>
+            <div class="eid-proof__stat">
+              <div class="eid-proof__stat-value">End-to-End</div>
+              <div class="eid-proof__stat-label">Controlled Supply Chain</div>
             </div>
           </div>
+          <!-- TODO: optional client quote from Adnan -->
+          <blockquote class="eid-proof__quote">
+            <p>"Consistency is our currency of credibility."</p>
+            <cite>— Safi Meats</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
 
-          <!-- Right: Form -->
-          <form class="enquiry__form reveal">
-            <div class="enquiry__form-row">
+    <!-- ================================================================ -->
+    <!-- 6. PRICING REQUEST FORM                                           -->
+    <!-- ================================================================ -->
+    <section class="eid-form-section section--dark" id="eid-form">
+      <div class="container">
+        <div class="eid-form-section__inner reveal">
+          <div class="eid-form-section__header">
+            <span class="label">Get Started</span>
+            <h2>Request Pricing</h2>
+            <p>Submit your requirements below, or reach out directly via WhatsApp.</p>
+          </div>
+
+          <form class="eid-form">
+            <div class="eid-form__row">
               <div class="form-group">
-                <label class="form-label" for="eid-name">Full Name</label>
-                <input type="text" id="eid-name" class="form-input" placeholder="Your full name">
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="eid-company">Company</label>
+                <label class="form-label" for="eid-company">Company Name</label>
                 <input type="text" id="eid-company" class="form-input" placeholder="Company name">
               </div>
-            </div>
-            <div class="enquiry__form-row">
               <div class="form-group">
                 <label class="form-label" for="eid-country">Country</label>
                 <input type="text" id="eid-country" class="form-input" placeholder="Country">
               </div>
+            </div>
+            <div class="eid-form__row">
               <div class="form-group">
-                <label class="form-label" for="eid-phone">Phone</label>
-                <input type="tel" id="eid-phone" class="form-input" placeholder="Phone number">
+                <label class="form-label" for="eid-product">Product Interest</label>
+                <select id="eid-product" class="form-select">
+                  <option value="">Select product</option>
+                  <option value="beef">Beef</option>
+                  <option value="mutton">Mutton</option>
+                  <option value="lamb">Lamb</option>
+                  <option value="multiple">Multiple Products</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="eid-volume">Target Volume</label>
+                <!-- TODO: volume unit guidance from Adnan -->
+                <input type="text" id="eid-volume" class="form-input" placeholder="e.g. 20 tonnes / month">
               </div>
             </div>
-            <div class="form-group">
-              <label class="form-label" for="eid-email">Email</label>
-              <input type="email" id="eid-email" class="form-input" placeholder="your@email.com">
+            <div class="eid-form__row">
+              <div class="form-group">
+                <label class="form-label" for="eid-email">Email</label>
+                <input type="email" id="eid-email" class="form-input" placeholder="your@email.com">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="eid-whatsapp">WhatsApp Number</label>
+                <input type="tel" id="eid-whatsapp" class="form-input" placeholder="+971 XX XXX XXXX">
+              </div>
             </div>
-            <div class="form-group">
-              <label class="form-label" for="eid-product">Product Interest</label>
-              <select id="eid-product" class="form-select">
-                <option value="">Select product</option>
-                <option value="beef">Beef</option>
-                <option value="mutton">Mutton</option>
-                <option value="lamb">Lamb</option>
-                <option value="multiple">Multiple Products</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="eid-message">Message</label>
-              <textarea id="eid-message" class="form-textarea" placeholder="Tell us about your requirements..."></textarea>
-            </div>
-            <button type="submit" class="btn btn--primary" style="width: 100%;">Submit Enquiry</button>
+            <button type="submit" class="btn btn--primary" style="width: 100%;">Submit Request</button>
           </form>
 
+          <!-- Repeat CTAs -->
+          <div class="eid-cta-repeat eid-cta-repeat--form">
+            <!-- TODO: final WhatsApp link from Adnan -->
+            <p class="eid-form-section__alt">Or contact us directly:</p>
+            <a href="contact.html" class="btn btn--outline">WhatsApp</a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ================================================================ -->
-    <!-- 5. FOOTER                                                         -->
+    <!-- 7. FOOTER — Closes with Eid greeting mirroring the open           -->
     <!-- ================================================================ -->
-    <footer class="footer">
-      <div class="footer__grid">
-        <div class="footer__col">
-          <div class="footer__brand-name"><span>الصافي</span> SAFI</div>
-          <p class="footer__tagline">Premium halal meat, processed to uncompromising standards, delivered to discerning markets.</p>
-        </div>
-
-        <div class="footer__col">
-          <div class="footer__heading">Company</div>
-          <a href="index.html" class="footer__link">Home</a>
-          <a href="process.html" class="footer__link">Our Process</a>
-          <a href="careers.html" class="footer__link">Careers</a>
-        </div>
-
-        <div class="footer__col">
-          <div class="footer__heading">Products</div>
-          <a href="products.html" class="footer__link">Beef</a>
-          <a href="products.html" class="footer__link">Mutton</a>
-          <a href="products.html" class="footer__link">Lamb</a>
-        </div>
-
-        <div class="footer__col">
-          <!-- TODO: final contact details from Adnan -->
-          <div class="footer__heading">Contact</div>
-          <span class="footer__link">info@safimeats.com</span>
-          <span class="footer__link">+92 XXX XXXXXXX</span>
-          <span class="footer__link">Punjab, Pakistan</span>
+    <footer class="eid-footer">
+      <div class="eid-footer__main">
+        <div class="container">
+          <div class="eid-footer__grid">
+            <div class="eid-footer__col">
+              <div class="eid-footer__brand">
+                <span class="eid-footer__brand-ar">الصافي</span>
+                <span class="eid-footer__brand-en">Safi Meats</span>
+              </div>
+              <p class="eid-footer__tagline">Premium halal meat, exported to uncompromising standards.</p>
+            </div>
+            <div class="eid-footer__col">
+              <!-- TODO: final contact details from Adnan -->
+              <div class="eid-footer__heading">Contact</div>
+              <span class="eid-footer__link">info@safimeats.com</span>
+              <span class="eid-footer__link">+92 XXX XXXXXXX</span>
+              <span class="eid-footer__link">WhatsApp Direct</span>
+            </div>
+            <div class="eid-footer__col">
+              <div class="eid-footer__heading">Location</div>
+              <!-- TODO: confirm address from Adnan -->
+              <span class="eid-footer__link">Punjab, Pakistan</span>
+            </div>
+            <div class="eid-footer__col">
+              <div class="eid-footer__heading">Certifications</div>
+              <span class="eid-footer__link">Halal Certified</span>
+              <span class="eid-footer__link">HACCP Compliant</span>
+              <span class="eid-footer__link">Export Licensed</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="footer__bottom">
-        <div class="footer__bottom-inner">
-          <span class="footer__copyright">&copy; 2025 Safi Meats. All rights reserved.</span>
-          <span class="footer__motto">Consistency is our currency of credibility.</span>
-        </div>
+      <!-- Closing Eid greeting — mirrors the hero -->
+      <div class="eid-footer__close">
+        <span class="eid-footer__close-ar">عيد مبارك</span>
+        <span class="eid-footer__close-en">From our family to yours.</span>
+        <span class="eid-footer__copyright">&copy; 2025 Safi Meats. All rights reserved.</span>
       </div>
     </footer>
 
@@ -297,7 +311,6 @@
 
   <!-- Scripts -->
   <script src="js/splash.js"></script>
-  <script src="js/navigation.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
