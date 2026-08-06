@@ -1,0 +1,12 @@
+{
+  "name": "safi-meats-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "serve": "npx serve safi-meats-site -l 3000",
+    "pdf": "node scripts/render-pdf.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.52.0"
+  }
+}

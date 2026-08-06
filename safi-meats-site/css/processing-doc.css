@@ -1,0 +1,513 @@
+/* ==========================================================================
+   SAFI MEATS — Processing & Certification One-Pager
+   Screen + print styles. Uses existing tokens from variables.css.
+   ========================================================================== */
+
+/* ── Masthead ────────────────────────────────────────────────────────────── */
+.proc-doc__masthead {
+  background-color: var(--primary);
+  padding: 5.5rem 0 var(--space-md);
+}
+
+.proc-doc__masthead-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.proc-doc__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.proc-doc__logo-ar {
+  font-family: var(--font-arabic);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1;
+}
+
+.proc-doc__logo-en {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cream);
+  line-height: 1;
+}
+
+.proc-doc__masthead-title .label {
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+
+.proc-doc__masthead-title h1 {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  color: var(--cream);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ── Process Chain ───────────────────────────────────────────────────────── */
+.proc-doc__chain {
+  background-color: var(--primary);
+  padding: 0 0 var(--space-md);
+  border-bottom: 1px solid rgba(240, 237, 228, 0.08);
+}
+
+.proc-doc__chain-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-sm) var(--container-pad);
+  display: flex;
+  gap: var(--space-xs);
+  overflow-x: auto;
+}
+
+.proc-doc__step {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.proc-doc__step-num {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: rgba(240, 237, 228, 0.25);
+  line-height: 1;
+}
+
+.proc-doc__step-name {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(240, 237, 228, 0.35);
+  line-height: 1;
+}
+
+.proc-doc__step--active {
+  background: rgba(240, 237, 228, 0.06);
+  border: 1px solid rgba(240, 237, 228, 0.1);
+}
+
+.proc-doc__step--active .proc-doc__step-num {
+  color: var(--accent);
+}
+
+.proc-doc__step--active .proc-doc__step-name {
+  color: var(--cream);
+}
+
+/* ── Body ────────────────────────────────────────────────────────────────── */
+.proc-doc__body {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: var(--space-lg) var(--container-pad) var(--space-xl);
+}
+
+/* ── Standfirst ──────────────────────────────────────────────────────────── */
+.proc-doc__standfirst {
+  margin-bottom: var(--space-lg);
+  border-left: 2px solid var(--accent);
+  padding-left: var(--space-md);
+}
+
+.proc-doc__standfirst p {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  line-height: 1.6;
+  color: var(--text);
+  margin: 0;
+}
+
+/* ── Credential Table (pending state) ────────────────────────────────────── */
+.proc-doc__credentials {
+  margin-bottom: var(--space-lg);
+}
+
+.proc-doc__credentials h2 {
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  margin-bottom: var(--space-md);
+}
+
+.proc-doc__table-pending {
+  margin-bottom: var(--space-sm);
+}
+
+.proc-doc__table-placeholder {
+  width: 100%;
+  height: 180px;
+  background: var(--section-alt);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-md);
+}
+
+.proc-doc__table-note {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: var(--space-sm);
+}
+
+/* ── Credential Table (active state, for when data is provided) ─────────── */
+.proc-doc__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--space-sm);
+}
+
+.proc-doc__table thead th {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background-color: var(--primary);
+  padding: 0.7rem 0.8rem;
+  text-align: left;
+}
+
+.proc-doc__table thead th:first-child {
+  border-radius: var(--radius-sm) 0 0 0;
+}
+
+.proc-doc__table thead th:last-child {
+  border-radius: 0 var(--radius-sm) 0 0;
+}
+
+.proc-doc__table tbody td {
+  font-size: 0.88rem;
+  color: var(--text);
+  padding: 0.7rem 0.8rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.proc-doc__table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ── Selection Criteria ──────────────────────────────────────────────────── */
+.proc-doc__criteria {
+  margin-bottom: var(--space-lg);
+}
+
+.proc-doc__criteria h2 {
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  margin-bottom: var(--space-sm);
+}
+
+.proc-doc__criteria-intro {
+  font-size: 0.92rem;
+  color: var(--text-light);
+  margin-bottom: var(--space-md);
+  max-width: 640px;
+}
+
+.proc-doc__spec-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.proc-doc__spec-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.proc-doc__spec-row:last-child {
+  border-bottom: none;
+}
+
+.proc-doc__spec-label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+  min-width: 160px;
+  flex-shrink: 0;
+}
+
+.proc-doc__spec-value {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ── Documentation Line ──────────────────────────────────────────────────── */
+.proc-doc__doc-line {
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-md);
+}
+
+.proc-doc__doc-line p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .proc-doc__masthead-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .proc-doc__spec-row {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .proc-doc__spec-label {
+    min-width: unset;
+  }
+}
+
+/* ========================================================================
+   PRINT STYLES
+   ======================================================================== */
+@media print {
+  /* ── Hide interactive elements ──────────────────────────────────────── */
+  nav,
+  .nav,
+  .btn,
+  .cta,
+  form,
+  .whatsapp,
+  .footer,
+  .nav__hamburger {
+    display: none !important;
+  }
+
+  /* ── Page setup ─────────────────────────────────────────────────────── */
+  body.processing-doc {
+    background: #FAFAF7;
+    color: #1E3A2F;
+    font-size: 10pt;
+    line-height: 1.6;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── Masthead — brand band, compact for print ───────────────────── */
+  .proc-doc__masthead {
+    background-color: #1E3A2F !important;
+    padding: 12mm 0 6mm;
+    margin: -20mm -18mm 0;
+    padding-left: 18mm;
+    padding-right: 18mm;
+    width: calc(100% + 36mm);
+  }
+
+  .proc-doc__masthead-inner {
+    max-width: none;
+    padding: 0;
+  }
+
+  .proc-doc__masthead-title .label {
+    color: #B8924A !important;
+    font-size: 8pt;
+  }
+
+  .proc-doc__masthead-title h1 {
+    font-size: 18pt;
+    color: #F0EDE4 !important;
+  }
+
+  .proc-doc__logo-ar {
+    color: #F0EDE4 !important;
+    font-size: 12pt;
+  }
+
+  .proc-doc__logo-en {
+    color: #F0EDE4 !important;
+    font-size: 7pt;
+  }
+
+  /* ── Process chain — compact for print ──────────────────────────── */
+  .proc-doc__chain {
+    background-color: #1E3A2F !important;
+    margin: 0 -18mm;
+    padding: 2mm 18mm 4mm;
+    width: calc(100% + 36mm);
+    border-bottom: none;
+  }
+
+  .proc-doc__chain-inner {
+    max-width: none;
+    padding: 0;
+    gap: 2px;
+  }
+
+  .proc-doc__step {
+    padding: 2px 5px;
+  }
+
+  .proc-doc__step-num {
+    font-size: 6pt;
+  }
+
+  .proc-doc__step-name {
+    font-size: 6pt;
+  }
+
+  .proc-doc__step--active {
+    background: rgba(240, 237, 228, 0.08) !important;
+  }
+
+  .proc-doc__step--active .proc-doc__step-num {
+    color: #B8924A !important;
+  }
+
+  .proc-doc__step--active .proc-doc__step-name {
+    color: #F0EDE4 !important;
+  }
+
+  /* ── Body content ───────────────────────────────────────────────── */
+  .proc-doc__body {
+    max-width: none;
+    padding: 6mm 0 0;
+    margin: 0;
+  }
+
+  /* ── Standfirst ─────────────────────────────────────────────────── */
+  .proc-doc__standfirst {
+    margin-bottom: 6mm;
+    border-left: 1.5pt solid #B8924A;
+    padding-left: 4mm;
+  }
+
+  .proc-doc__standfirst p {
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #1E3A2F;
+  }
+
+  /* ── Credentials ────────────────────────────────────────────────── */
+  .proc-doc__credentials {
+    margin-bottom: 6mm;
+  }
+
+  .proc-doc__credentials .label {
+    font-size: 7pt;
+    color: #B8924A !important;
+  }
+
+  .proc-doc__credentials h2 {
+    font-size: 14pt;
+    margin-bottom: 3mm;
+  }
+
+  .proc-doc__table-placeholder {
+    height: 30mm;
+    background: #F6F4EF !important;
+    border: 0.5pt dashed #D4CFC4;
+  }
+
+  .proc-doc__table-note {
+    font-size: 8pt;
+    margin-top: 2mm;
+  }
+
+  /* Table (when data is present) */
+  .proc-doc__table {
+    break-inside: auto;
+  }
+
+  .proc-doc__table thead {
+    display: table-header-group;
+  }
+
+  .proc-doc__table thead th {
+    font-size: 7pt;
+    padding: 2mm 2.5mm;
+    background-color: #1E3A2F !important;
+    color: #F0EDE4 !important;
+  }
+
+  .proc-doc__table tbody tr {
+    break-inside: avoid;
+  }
+
+  .proc-doc__table tbody td {
+    font-size: 9pt;
+    padding: 2mm 2.5mm;
+    border-bottom: 0.5pt solid #D4CFC4;
+  }
+
+  /* ── Selection Criteria ─────────────────────────────────────────── */
+  .proc-doc__criteria {
+    margin-bottom: 6mm;
+  }
+
+  .proc-doc__criteria .label {
+    font-size: 7pt;
+    color: #B8924A !important;
+  }
+
+  .proc-doc__criteria h2 {
+    font-size: 14pt;
+    margin-bottom: 2mm;
+    break-after: avoid;
+  }
+
+  .proc-doc__criteria-intro {
+    font-size: 9pt;
+    margin-bottom: 3mm;
+  }
+
+  .proc-doc__spec-row {
+    padding: 1.5mm 0;
+    border-bottom: 0.5pt solid #D4CFC4;
+  }
+
+  .proc-doc__spec-label {
+    font-size: 8pt;
+    min-width: 32mm;
+  }
+
+  .proc-doc__spec-value {
+    font-size: 9pt;
+    line-height: 1.45;
+  }
+
+  /* ── Documentation line ─────────────────────────────────────────── */
+  .proc-doc__doc-line {
+    border-top: 0.5pt solid #D4CFC4;
+    padding-top: 3mm;
+  }
+
+  .proc-doc__doc-line p {
+    font-size: 8pt;
+    color: #4A6458;
+  }
+
+  /* ── General print rules ────────────────────────────────────────── */
+  h1, h2, h3 {
+    break-after: avoid;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
