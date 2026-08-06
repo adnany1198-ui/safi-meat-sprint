@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safi Meats — Company Profile</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --rose: #D9868F;
+      --green: #2E3B2E;
+      --paper: #FAFAF7;
+      --green-muted: rgba(46, 59, 46, 0.55);
+      --green-light: rgba(46, 59, 46, 0.12);
+      --page-w: 210mm;
+      --page-h: 297mm;
+      --banner-h: calc(var(--page-h) / 6);
+      --body-h: calc(var(--page-h) - var(--banner-h) * 2);
+    }
+
+    html, body {
+      width: var(--page-w);
+      height: var(--page-h);
+      overflow: hidden;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      font-family: 'DM Sans', 'Montserrat', -apple-system, sans-serif;
+      font-size: 8.5pt;
+      line-height: 1.55;
+      color: var(--green);
+      background: var(--paper);
+    }
+
+    /* ── Display font ──────────────────────────────────────── */
+    .serif {
+      font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    }
+
+    /* ── Page wrapper ──────────────────────────────────────── */
+    .page {
+      width: var(--page-w);
+      height: var(--page-h);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       1. TOP BANNER — 1/6 page height
+       ══════════════════════════════════════════════════════════ */
+    .banner-top {
+      height: var(--banner-h);
+      background: var(--rose);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 14mm;
+    }
+
+    .banner-top__company {
+      font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+      font-size: 22pt;
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--green);
+      margin-bottom: 2mm;
+    }
+
+    .banner-top__sub {
+      font-family: 'DM Sans', 'Montserrat', sans-serif;
+      font-size: 9pt;
+      font-weight: 500;
+      color: var(--green);
+      margin-bottom: 1.5mm;
+    }
+
+    .banner-top__tagline {
+      font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 10pt;
+      color: var(--green);
+      opacity: 0.75;
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       2–4. MIDDLE BODY — 4/6 page height
+       ══════════════════════════════════════════════════════════ */
+    .body {
+      height: var(--body-h);
+      padding: 6mm 14mm 5mm;
+      display: flex;
+      flex-direction: column;
+      gap: 4mm;
+    }
+
+    /* ── Section heading ───────────────────────────────────── */
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 3mm;
+      margin-bottom: 2mm;
+    }
+
+    .section-heading h2 {
+      font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+      font-size: 13pt;
+      font-weight: 400;
+      color: var(--green);
+      white-space: nowrap;
+    }
+
+    .section-heading .rule {
+      flex: 1;
+      height: 0.5pt;
+      background: var(--green);
+      opacity: 0.25;
+    }
+
+    /* ── 2. Company Overview ───────────────────────────────── */
+    .overview {
+      flex: 1.4;
+    }
+
+    .overview p {
+      font-size: 8pt;
+      line-height: 1.5;
+      color: var(--green);
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    /* ── 3. Supply Process ─────────────────────────────────── */
+    .process {
+      flex: 1.3;
+    }
+
+    .process-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 3mm;
+    }
+
+    .process-row {
+      display: flex;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    .process-row::before {
+      content: '';
+      position: absolute;
+      top: 7mm;
+      left: 7mm;
+      right: 7mm;
+      height: 0;
+      border-top: 0.75pt dotted var(--green);
+      opacity: 0.3;
+    }
+
+    .process-step {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-icon {
+      width: 14mm;
+      height: 14mm;
+      border: 0.75pt solid var(--green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--paper);
+      margin-bottom: 1.5mm;
+    }
+
+    .step-icon svg {
+      width: 6.5mm;
+      height: 6.5mm;
+      stroke: var(--green);
+      stroke-width: 1.5;
+      fill: none;
+      stroke-linecap: square;
+      stroke-linejoin: miter;
+    }
+
+    .step-num {
+      font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+      font-size: 11pt;
+      font-weight: 600;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 0.5mm;
+    }
+
+    .step-title {
+      font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+      font-size: 8pt;
+      font-weight: 600;
+      color: var(--green);
+      line-height: 1.2;
+      margin-bottom: 0.5mm;
+    }
+
+    .step-desc {
+      font-size: 6pt;
+      line-height: 1.35;
+      color: var(--green);
+      opacity: 0.7;
+      max-width: 38mm;
+    }
+
+    /* ── 4. Quality Assurance ──────────────────────────────── */
+    .qa {
+      flex: 0.6;
+    }
+
+    .qa p {
+      font-size: 7.5pt;
+      line-height: 1.5;
+      color: var(--green);
+    }
+
+    .qa-badges {
+      display: flex;
+      gap: 2mm;
+      margin-top: 1.5mm;
+    }
+
+    .qa-badge {
+      font-size: 6pt;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--green);
+      padding: 1mm 2.5mm;
+      border: 0.5pt solid var(--green);
+      border-radius: 2mm;
+      opacity: 0.7;
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       5. BOTTOM BANNER — 1/6 page height
+       ══════════════════════════════════════════════════════════ */
+    .banner-bottom {
+      height: var(--banner-h);
+      background: var(--rose);
+      display: flex;
+      align-items: center;
+      padding: 0 14mm;
+    }
+
+    .contact-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5mm;
+    }
+
+    .contact-block__name {
+      font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+      font-size: 12pt;
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    .contact-block__title {
+      font-size: 8pt;
+      font-weight: 500;
+      color: var(--green);
+      opacity: 0.7;
+      margin-bottom: 1mm;
+    }
+
+    .contact-block__line {
+      font-size: 8pt;
+      color: var(--green);
+      line-height: 1.5;
+    }
+
+    /* ── Print overrides ───────────────────────────────────── */
+    @media print {
+      html, body {
+        width: 210mm;
+        height: 297mm;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- ════════════════════════════════════════════════════════
+         1. TOP BANNER
+         ════════════════════════════════════════════════════════ -->
+    <header class="banner-top">
+      <div class="banner-top__company">Safi Meats (Private) Limited</div>
+      <div class="banner-top__sub">Wholesale Halal Beef Solutions for Businesses across Pakistan</div>
+      <div class="banner-top__tagline">Consistency is our Currency</div>
+    </header>
+
+    <!-- ════════════════════════════════════════════════════════
+         2–4. BODY
+         ════════════════════════════════════════════════════════ -->
+    <main class="body">
+
+      <!-- 2. COMPANY OVERVIEW ──────────────────────────────── -->
+      <section class="overview">
+        <div class="section-heading">
+          <h2>Company Overview</h2>
+          <span class="rule"></span>
+        </div>
+        <p>Safi Meats (Private) Limited is a Pakistani wholesale supplier of premium halal beef, delivering whole carcasses to exporters, slaughterhouses, supermarkets, hotels, restaurants, caterers, clubs and institutional buyers across Karachi, Lahore and Islamabad. Our founder and CEO, Hamzah Hanif, spent years supplying importers and retailers throughout the Middle East. In that time he saw the same problem again and again: buyers could rarely rely on consistent quality or dependable supply. We built Safi Meats to solve it.</p>
+        <p style="margin-top: 1.5mm;">Today we operate a nationwide procurement network of 35 professionals positioned across Punjab and Sindh, sourcing from 14 livestock markets each week alongside a base of trusted partner farms. This keeps our supply steady year-round. Processing is carried out by two of the industry's leading operators, The Organic Meat Company Limited in Karachi and Tazij Foods in Lahore.</p>
+        <p style="margin-top: 1.5mm;">We supply beef and buffalo across four categories: Cow (Osar), Bull, Heifer and Buffalo, offered as whole carcasses, forequarters and hindquarters. Every order is worked to the customer's specification, with carcass weight range, animal age and quality grading set to the buyer's requirements, so each delivery arrives matched to the standard they operate to.</p>
+      </section>
+
+      <!-- 3. SUPPLY PROCESS ────────────────────────────────── -->
+      <section class="process">
+        <div class="section-heading">
+          <h2>Our Process &mdash; Complete Supply Chain Control</h2>
+          <span class="rule"></span>
+        </div>
+
+        <!-- Row 1: Steps 01–04 -->
+        <div class="process-grid">
+          <div class="process-row">
+
+            <div class="process-step">
+              <div class="step-icon">
+                <svg viewBox="0 0 24 24"><path d="M3 21V9l9-7 9 7v12H3z"/><path d="M9 21V13h6v8"/></svg>
+              </div>
+              <span class="step-num">01</span>
+              <span class="step-title">Our Farms</span>
+              <span class="step-desc">Owned and managed farms with high animal welfare standards.</span>
+            </div>
+
+            <div class="process-step">
+              <div class="step-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8 2 4 5 4 9c0 3 2 5 4 6v1h8v-1c2-1 4-3 4-6 0-4-4-7-8-7z"/><path d="M8 18h8M10 21h4"/><circle cx="12" cy="9" r="2"/></svg>
+              </div>
+              <span class="step-num">02</span>
+              <span class="step-title">Livestock Procurement</span>
+              <span class="step-desc">Dedicated team sourcing healthy, premium livestock.</span>
+            </div>
+
+            <div class="process-step">
+              <div class="step-icon">
+                <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
+              </div>
+              <span class="step-num">03</span>
+              <span class="step-title">Controlled Sourcing</span>
+              <span class="step-desc">Strict selection criteria and traceable origins.</span>
+            </div>
+
+            <div class="process-step">
+              <div class="step-icon">
+                <svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="1"/><path d="M9 7h6M9 11h6M9 15h4"/><circle cx="12" cy="19" r="0.5"/></svg>
+              </div>
+              <span class="step-num">04</span>
+              <span class="step-title">Approved Processing</span>
+              <span class="step-desc">Processed at approved facilities with hygiene excellence.</span>
+            </div>
+
+          </div>
+
+          <!-- Row 2: Steps 05–08 -->
+          <div class="process-row">
+
+            <div class="process-step">
+              <div class="step-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M8 11h6M11 8v6"/></svg>
+              </div>
+              <span class="step-num">05</span>
+              <span class="step-title">Quality Inspection</span>
+              <span class="step-desc">Multi-point inspection for quality, safety and compliance.</span>
+            </div>
+
+            <div class="process-step">
+              <div class="step-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2L8 6h3v6H8l4 4 4-4h-3V6h3z" transform="rotate(180 12 12)"/><path d="M2 12a10 10 0 0 0 5.2 8.8M16.8 20.8A10 10 0 0 0 22 12M12 2a10 10 0 0 0-8.8 5.2"/></svg>
+              </div>
+              <span class="step-num">06</span>
+              <span class="step-title">Cold Chain Management</span>
+              <span class="step-desc">Temperature controlled storage and handling.</span>
+            </div>
+
+            <div class="process-step">
+              <div class="step-icon">
+                <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              </div>
+              <span class="step-num">07</span>
+              <span class="step-title">Packaging</span>
+              <span class="step-desc">Hygienic packaging ensuring product integrity.</span>
+            </div>
+
+            <div class="process-step">
+              <div class="step-icon">
+                <svg viewBox="0 0 24 24"><path d="M1 14h6v7H1z"/><path d="M7 17h8V9H7"/><path d="M15 12h6l2 5v4h-3"/><circle cx="7.5" cy="21.5" r="1.5"/><circle cx="18.5" cy="21.5" r="1.5"/></svg>
+              </div>
+              <span class="step-num">08</span>
+              <span class="step-title">Delivery</span>
+              <span class="step-desc">Reliable logistics delivering across Pakistan.</span>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. QUALITY ASSURANCE ─────────────────────────────── -->
+      <section class="qa">
+        <div class="section-heading">
+          <h2>Quality Assurance</h2>
+          <span class="rule"></span>
+        </div>
+        <p>Our logistics and processing partners are halal certified and independently accredited across Halal Certification, ISO 9001:2015, HACCP (Hazard Analysis and Critical Control Point) and GMP (Good Manufacturing Practices). Beyond our partners' own controls, a member of the Safi Meats team is present at every processing event — verifying each carcass against your specification before it leaves the floor.</p>
+        <div class="qa-badges">
+          <span class="qa-badge">Halal</span>
+          <span class="qa-badge">ISO 9001:2015</span>
+          <span class="qa-badge">HACCP</span>
+          <span class="qa-badge">GMP</span>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ════════════════════════════════════════════════════════
+         5. BOTTOM BANNER
+         ════════════════════════════════════════════════════════ -->
+    <footer class="banner-bottom">
+      <div class="contact-block">
+        <span class="contact-block__name">Hamzah Hanif</span>
+        <span class="contact-block__title">Chief Executive Officer</span>
+        <span class="contact-block__line">+92 300 3996998</span>
+        <span class="contact-block__line">hamzah.hanif@safimeats.com</span>
+        <!-- Physical address to be confirmed -->
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
