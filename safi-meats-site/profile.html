@@ -25,6 +25,8 @@
       --paper: #FAFAF7;
       --green-muted: rgba(46, 59, 46, 0.55);
       --green-light: rgba(46, 59, 46, 0.12);
+      --section-pad: 4mm;
+      --heading-gap: 3mm;
       --page-w: 210mm;
       --page-h: 297mm;
       --banner-h: calc(var(--page-h) / 8);
@@ -117,10 +119,10 @@
        ══════════════════════════════════════════════════════════ */
     .body {
       height: var(--body-h);
-      padding: 8mm 14mm 6mm;
+      padding: var(--section-pad) 14mm;
       display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
+      gap: var(--section-pad);
     }
 
     /* ── Section heading ───────────────────────────────────── */
@@ -128,7 +130,7 @@
       display: flex;
       align-items: center;
       gap: 3mm;
-      margin-bottom: 3mm;
+      margin-bottom: var(--heading-gap);
     }
 
     .section-heading h2 {
@@ -148,7 +150,10 @@
 
     /* ── 2. Company Overview ───────────────────────────────── */
     .overview {
-      flex: 0 0 auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .overview p {
@@ -165,7 +170,10 @@
 
     /* ── 3. Supply Process ─────────────────────────────────── */
     .process {
-      flex: 0 0 auto;
+      flex: 1.2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .process-grid {
@@ -184,8 +192,8 @@
       content: '';
       position: absolute;
       top: 7.5mm;
-      left: 9mm;
-      right: 9mm;
+      left: 12.5%;
+      right: 12.5%;
       height: 0;
       border-top: 0.75px dotted rgba(46, 59, 46, 0.22);
     }
@@ -253,7 +261,10 @@
 
     /* ── 4. Quality Assurance ──────────────────────────────── */
     .qa {
-      flex: 0 0 auto;
+      flex: 0.6;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .qa p {
@@ -369,7 +380,8 @@
           <h2>Company Overview</h2>
           <span class="rule"></span>
         </div>
-        <p>Safi Meats (Private) Limited is a Pakistani wholesale supplier of premium halal beef, delivering whole carcasses to exporters, slaughterhouses, supermarkets, hotels, restaurants, caterers, clubs and institutional buyers across Karachi, Lahore and Islamabad. Our founder and CEO, Hamzah Hanif, spent years supplying importers and retailers throughout the Middle East. In that time he saw the same problem again and again: buyers could rarely rely on consistent quality or dependable supply. We built Safi Meats to solve it.</p>
+        <p>Safi Meats (Private) Limited is a Pakistani wholesale supplier of premium halal beef, delivering whole carcasses to exporters, slaughterhouses, supermarkets, hotels, restaurants, caterers, clubs and institutional buyers across Karachi, Lahore and Islamabad.</p>
+        <p>Our founder and CEO, Hamzah Hanif, spent years supplying importers and retailers throughout the Middle East. In that time he saw the same problem again and again: buyers could rarely rely on consistent quality or dependable supply. We built Safi Meats to solve it.</p>
         <p>Today we operate a nationwide procurement network of 35 professionals positioned across Punjab and Sindh, sourcing from 14 livestock markets each week alongside a base of trusted partner farms. This keeps our supply steady year-round. Processing is carried out by two of the industry's leading operators, The Organic Meat Company Limited in Karachi and Tazij Foods in Lahore.</p>
         <p>We supply beef and buffalo across four categories: Cow (Osar), Bull, Heifer and Buffalo, offered as whole carcasses, forequarters and hindquarters. Every order is worked to the customer's specification, with carcass weight range, animal age and quality grading set to the buyer's requirements, so each delivery arrives matched to the standard they operate to.</p>
       </section>
