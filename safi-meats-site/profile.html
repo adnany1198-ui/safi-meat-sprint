@@ -6,7 +6,7 @@
   <title>Safi Meats — Company Profile</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     @page {
       size: A4;
@@ -66,7 +66,8 @@
        ══════════════════════════════════════════════════════════ */
     .banner-top {
       height: var(--banner-h);
-      background: var(--rose);
+      background: var(--green);
+      border-bottom: 2px solid var(--rose);
       display: flex;
       align-items: center;
       padding: 0 14mm;
@@ -74,7 +75,7 @@
     }
 
     .banner-top__logo {
-      height: 24mm;
+      height: 25mm;
       width: auto;
       flex-shrink: 0;
       filter: brightness(0) invert(1);
@@ -84,33 +85,31 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 1mm;
+      gap: 1.2mm;
     }
 
     .banner-top__company {
       font-family: 'Montserrat', sans-serif;
-      font-size: 15pt;
-      font-weight: 300;
+      font-size: 16pt;
+      font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       line-height: 1.2;
-      color: var(--green);
+      color: #fff;
     }
 
     .banner-top__sub {
       font-family: 'Montserrat', sans-serif;
       font-size: 7.5pt;
       font-weight: 400;
-      color: var(--green);
-      opacity: 0.8;
+      color: rgba(255, 255, 255, 0.7);
     }
 
     .banner-top__tagline {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-style: italic;
-      font-size: 9pt;
-      color: var(--green);
-      opacity: 0.65;
+      font-size: 9.5pt;
+      color: var(--rose);
     }
 
     /* ══════════════════════════════════════════════════════════
@@ -118,7 +117,7 @@
        ══════════════════════════════════════════════════════════ */
     .body {
       height: var(--body-h);
-      padding: 9mm 14mm 7mm;
+      padding: 8mm 14mm 6mm;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
@@ -129,12 +128,12 @@
       display: flex;
       align-items: center;
       gap: 3mm;
-      margin-bottom: 2.5mm;
+      margin-bottom: 3mm;
     }
 
     .section-heading h2 {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 12pt;
+      font-size: 13pt;
       font-weight: 400;
       color: #2E3B2E;
       white-space: nowrap;
@@ -144,7 +143,7 @@
       flex: 1;
       height: 0.75px;
       background: #2E3B2E;
-      opacity: 0.22;
+      opacity: 0.2;
     }
 
     /* ── 2. Company Overview ───────────────────────────────── */
@@ -153,15 +152,15 @@
     }
 
     .overview p {
-      font-size: 7.5pt;
-      line-height: 1.6;
+      font-size: 8.5pt;
+      line-height: 1.65;
       color: var(--green);
       text-align: justify;
       hyphens: auto;
     }
 
     .overview p + p {
-      margin-top: 1.5mm;
+      margin-top: 2mm;
     }
 
     /* ── 3. Supply Process ─────────────────────────────────── */
@@ -172,7 +171,7 @@
     .process-grid {
       display: flex;
       flex-direction: column;
-      gap: 4mm;
+      gap: 5mm;
     }
 
     .process-row {
@@ -184,11 +183,11 @@
     .process-row::before {
       content: '';
       position: absolute;
-      top: 6.5mm;
-      left: 8mm;
-      right: 8mm;
+      top: 7.5mm;
+      left: 9mm;
+      right: 9mm;
       height: 0;
-      border-top: 0.75px dotted rgba(46, 59, 46, 0.25);
+      border-top: 0.75px dotted rgba(46, 59, 46, 0.22);
     }
 
     .process-step {
@@ -202,9 +201,9 @@
     }
 
     .step-icon {
-      width: 13mm;
-      height: 13mm;
-      border: 0.75px solid rgba(46, 59, 46, 0.5);
+      width: 15mm;
+      height: 15mm;
+      border: 0.75px solid rgba(46, 59, 46, 0.45);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -214,8 +213,8 @@
     }
 
     .step-icon svg {
-      width: 6mm;
-      height: 6mm;
+      width: 7mm;
+      height: 7mm;
       stroke: var(--green);
       stroke-width: 1.5;
       fill: none;
@@ -225,17 +224,17 @@
 
     .step-num {
       font-family: 'Montserrat', sans-serif;
-      font-size: 8pt;
+      font-size: 8.5pt;
       font-weight: 500;
       color: var(--green);
       line-height: 1;
       margin-bottom: 0.8mm;
-      opacity: 0.45;
+      opacity: 0.4;
     }
 
     .step-title {
       font-family: 'Montserrat', sans-serif;
-      font-size: 6pt;
+      font-size: 6.5pt;
       font-weight: 600;
       letter-spacing: 0.04em;
       text-transform: uppercase;
@@ -245,11 +244,11 @@
     }
 
     .step-desc {
-      font-size: 5.5pt;
+      font-size: 6pt;
       line-height: 1.4;
       color: var(--green);
-      opacity: 0.55;
-      max-width: 36mm;
+      opacity: 0.5;
+      max-width: 38mm;
     }
 
     /* ── 4. Quality Assurance ──────────────────────────────── */
@@ -258,8 +257,8 @@
     }
 
     .qa p {
-      font-size: 7.5pt;
-      line-height: 1.6;
+      font-size: 8.5pt;
+      line-height: 1.65;
       color: var(--green);
       text-align: justify;
       hyphens: auto;
@@ -267,19 +266,19 @@
 
     .qa-badges {
       display: flex;
-      gap: 3mm;
-      margin-top: 2.5mm;
+      gap: 3.5mm;
+      margin-top: 3mm;
     }
 
     .qa-badge {
       font-family: 'Montserrat', sans-serif;
-      font-size: 5.5pt;
+      font-size: 6pt;
       font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--green);
-      padding: 1.2mm 3.5mm;
-      border: 0.75px solid rgba(46, 59, 46, 0.35);
+      padding: 1.5mm 4mm;
+      border: 0.75px solid rgba(46, 59, 46, 0.3);
       border-radius: 1.5mm;
     }
 
@@ -288,7 +287,8 @@
        ══════════════════════════════════════════════════════════ */
     .banner-bottom {
       height: var(--banner-h);
-      background: var(--rose);
+      background: var(--green);
+      border-top: 2px solid var(--rose);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -296,10 +296,10 @@
     }
 
     .banner-bottom__logo {
-      height: 18mm;
+      height: 20mm;
       width: auto;
       filter: brightness(0) invert(1);
-      opacity: 0.7;
+      opacity: 0.6;
     }
 
     .contact-block {
@@ -312,26 +312,25 @@
     .contact-block__name {
       font-family: 'Montserrat', sans-serif;
       font-size: 10pt;
-      font-weight: 300;
+      font-weight: 400;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--green);
+      color: #fff;
     }
 
     .contact-block__title {
       font-family: 'Montserrat', sans-serif;
       font-size: 7pt;
       font-weight: 400;
-      color: var(--green);
-      opacity: 0.6;
+      color: rgba(255, 255, 255, 0.6);
       margin-bottom: 1mm;
     }
 
     .contact-block__line {
       font-family: 'Montserrat', sans-serif;
-      font-size: 7pt;
+      font-size: 7.5pt;
       font-weight: 400;
-      color: var(--green);
+      color: rgba(255, 255, 255, 0.85);
       line-height: 1.6;
     }
 
