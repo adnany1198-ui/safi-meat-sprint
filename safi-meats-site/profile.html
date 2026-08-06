@@ -119,10 +119,10 @@
        ══════════════════════════════════════════════════════════ */
     .body {
       height: var(--body-h);
-      padding: var(--section-pad) 14mm;
+      padding: 0 14mm;
       display: flex;
       flex-direction: column;
-      gap: var(--section-pad);
+      justify-content: space-evenly;
     }
 
     /* ── Section heading ───────────────────────────────────── */
@@ -150,36 +150,30 @@
 
     /* ── 2. Company Overview ───────────────────────────────── */
     .overview {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      flex: 0 0 auto;
     }
 
     .overview p {
-      font-size: 8.5pt;
-      line-height: 1.65;
+      font-size: 9pt;
+      line-height: 1.7;
       color: var(--green);
       text-align: justify;
       hyphens: auto;
     }
 
     .overview p + p {
-      margin-top: 2mm;
+      margin-top: 2.5mm;
     }
 
     /* ── 3. Supply Process ─────────────────────────────────── */
     .process {
-      flex: 1.2;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      flex: 0 0 auto;
     }
 
     .process-grid {
       display: flex;
       flex-direction: column;
-      gap: 5mm;
+      gap: 6mm;
     }
 
     .process-row {
@@ -261,15 +255,12 @@
 
     /* ── 4. Quality Assurance ──────────────────────────────── */
     .qa {
-      flex: 0.6;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      flex: 0 0 auto;
     }
 
     .qa p {
-      font-size: 8.5pt;
-      line-height: 1.65;
+      font-size: 9pt;
+      line-height: 1.7;
       color: var(--green);
       text-align: justify;
       hyphens: auto;
